@@ -6,9 +6,24 @@ class User{
     private string $password;
     private string $firstName;
     private string $lastName;
-    private string $thirdName;
-    private string $avatarUrl;
+    private ?string $thirdName;
+    private ?string $avatarUrl;
     private string $positionId;
+
+
+
+    public function __construct(int $userId, string $email, string $password, string $firstName, string $lastName, ?string $thirdName, ?string $avatarUrl, string $positionId)
+    {
+        $this->userId = $userId;
+        $this->email = $email;
+        $this->password = $password;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->thirdName = $thirdName;
+        $this->avatarUrl = $avatarUrl;
+        $this->positionId = $positionId;
+    }
+
 
     public function getPassword(): string
     {
@@ -60,22 +75,22 @@ class User{
         $this->lastName = $lastName;
     }
 
-    public function getThirdName(): string
+    public function getThirdName(): ?string
     {
         return $this->thirdName;
     }
 
-    public function setThirdName(string $thirdName): void
+    public function setThirdName(?string $thirdName): void
     {
         $this->thirdName = $thirdName;
     }
 
-    public function getAvatarUrl(): string
+    public function getAvatarUrl(): ?string
     {
         return $this->avatarUrl;
     }
 
-    public function setAvatarUrl(string $avatarUrl): void
+    public function setAvatarUrl(?string $avatarUrl): void
     {
         $this->avatarUrl = $avatarUrl;
     }
