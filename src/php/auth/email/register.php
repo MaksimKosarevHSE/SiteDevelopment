@@ -11,9 +11,7 @@ $_SESSION["validation"] = [];
 $_SESSION["values"] = [
     $attrFirstName => $_POST["firstName"],
     $attrLastName => $_POST["lastName"],
-    $attrEmail => $_POST["email"],
-    $attrPassword => $_POST["password"],
-    $attrConfirmPassword => $_POST["confirmPassword"]
+    $attrEmail => $_POST["email"]
 ];
 
 function redirect(){
