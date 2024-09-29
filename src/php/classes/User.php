@@ -1,7 +1,7 @@
 <?php
 
 class User{
-    private int $userId;
+    private ?int $userId = null;
     private string $email;
     private string $password;
     private string $firstName;
@@ -12,9 +12,8 @@ class User{
 
 
 
-    public function __construct(int $userId, string $email, string $password, string $firstName, string $lastName, ?string $thirdName, ?string $avatarUrl, string $positionId)
+    public function __construct(string $email, string $password, string $firstName, string $lastName, ?string $thirdName, ?string $avatarUrl, string $positionId)
     {
-        $this->userId = $userId;
         $this->email = $email;
         $this->password = $password;
         $this->firstName = $firstName;

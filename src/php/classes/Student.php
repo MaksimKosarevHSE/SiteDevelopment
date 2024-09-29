@@ -1,15 +1,15 @@
 <?php
 include_once "User.php";
 class Student extends User{
-    private int $studentID;
+    private ?int $studentID = null;
     private ?int $course;
     private ?string $faculty;
     private ?int $group;
 
 
-    public function __construct(int $userId, string $email, string $password, string $firstName, string $lastName, ?string $thirdName, ?string $avatarUrl, string $positionId, int $studentID, ?int $course, ?string $faculty, ?int $group)
+    public function __construct(string $email, string $password, string $firstName, string $lastName, ?string $thirdName, ?string $avatarUrl, string $positionId, ?int $studentID, ?int $course, ?string $faculty, ?int $group)
     {
-        parent::__construct($userId, $email, $password, $firstName, $lastName, $thirdName, $avatarUrl, $positionId);
+        parent::__construct($email, $password, $firstName, $lastName, $thirdName, $avatarUrl, $positionId);
         $this->studentID = $studentID;
         $this->course = $course;
         $this->faculty = $faculty;
@@ -17,7 +17,7 @@ class Student extends User{
     }
 
 
-    public function getStudentID(): int
+    public function getStudentID(): ?int
     {
         return $this->studentID;
     }
