@@ -15,6 +15,7 @@ function getServerConnection() : PDO{
 function getDbConnectionUsers() : PDO{
     try{
         $conn = new PDO("mysql:host=" . HOST . ";charset=utf8;  dbname=u2837693_Users", USER_NAME, PASSWORD);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch(PDOException $e){
         die("Фатальная ошибка сервиса, обратитесь к администрации сайта");

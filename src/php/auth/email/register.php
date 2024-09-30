@@ -80,9 +80,8 @@ include_once "../../classes/Student.php";
 
 
 //проверить зареган ли пользователь уже с таким email
-$_SESSION["regSucces"] = false;
+$_SESSION["regSuccess"] = false;
 $connUsers = getDBConnectionUsers();
-$connUsers->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try{
     $sql = "SELECT * FROM Users WHERE email = :email";
     $stmt = $connUsers->prepare($sql);
@@ -143,14 +142,12 @@ try{
         throw new Exception("Ошибка отправки письма");
     }
     $connUsers->commit();
-    $_SESSION["regSucces"] = true;
+    $_SESSION["regSuccess"] = true;
 } catch (Exception $e) {
     $connUsers->rollBack();
     die($e->getMessage());
+
 }
 
 header('Location: ../../../../../login.php');
 die();
-//https://www.php.net/manual/ru/pdo.transactions.php СМОТРИ ЭТО
-// и это https://webistore.ru/php/ispolzovanie-tranzakcij-v-pdo-na-php/
-//везде закрыть подключение к базе
