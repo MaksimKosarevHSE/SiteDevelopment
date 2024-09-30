@@ -15,7 +15,7 @@ $_SESSION["values"] = [
 ];
 
 function redirect(){
-    header("location: ../../../../index.php");
+    header("location: ../../../../reg.php");
     die();
 }
 
@@ -68,14 +68,19 @@ if (empty($_POST[$attrPassword]) || empty($_POST[$attrConfirmPassword])
 if(sizeof($_SESSION["validation"]) > 0) {
     redirect();
 }
-//конец валидации данных
-//начало регистрации
+
+
+
+
+
+
 include_once "../../DB/dbConnections.php";
 include_once "../../classes/Student.php";
 
 
 
 //проверить зареган ли пользователь уже с таким email
+$_SESSION["regSucces"] = false;
 $connUsers = getDBConnectionUsers();
 $connUsers->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try{
@@ -138,11 +143,14 @@ try{
         throw new Exception("Ошибка отправки письма");
     }
     $connUsers->commit();
+    $_SESSION["regSucces"] = true;
 } catch (Exception $e) {
     $connUsers->rollBack();
     die($e->getMessage());
 }
-echo "Чтобы активировать аккаунт перейдите по ссылке из письма. Важно: письмо могло попасть в папку \"Спам\"";
+
+header('Location: ../../../../../login.php');
+die();
 //https://www.php.net/manual/ru/pdo.transactions.php СМОТРИ ЭТО
 // и это https://webistore.ru/php/ispolzovanie-tranzakcij-v-pdo-na-php/
 //везде закрыть подключение к базе

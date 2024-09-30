@@ -1,5 +1,9 @@
 <?php
 session_start();
+function redirect(){
+    header('Location: ../../../../../login.php');
+    die();
+}
 if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
     $code = trim($_GET["code"]);
     include_once "../../DB/dbConnections.php";
@@ -23,9 +27,14 @@ if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
             throw new Exception("Ошибка БД");
         }
         $connUsers->commit();
-        echo "Email успешно подтверждён";
+        $_SESSION["confirmed_email"] = false;
+        redirect();
     } catch (Exception $e) {
         $connUsers->rollBack();
+        $_SESSION["confirmed_email"] = false;
+        redirect();
         echo $e->getMessage();
     }
 }
+$_SESSION["confirmed_email"] = false;
+redirect();

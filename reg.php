@@ -22,8 +22,10 @@ session_start();
         <input type="submit" value="Зарегаться">
     </form>
     <?php
-    if(!empty($_SESSION['validation'])){
-        print_r($_SESSION);
+    if(!empty($_SESSION)){
+
+            print_r($_SESSION);
+
 
     }
 
