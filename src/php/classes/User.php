@@ -1,47 +1,38 @@
 <?php
 
 class User{
-    private ?int $userId = null;
+    private int $userId;
     private string $email;
-    private string $password;
     private string $firstName;
     private string $lastName;
-    private ?string $thirdName;
-    private ?string $avatarUrl;
-    private string $positionId;
+    private ?string $thirdName = null;
+    private bool $confirmedEmail;
+    private ?string $avatarUrl = null;
+    private int $positionId;
 
 
 
-    public function __construct(string $email, string $password, string $firstName, string $lastName, ?string $thirdName, ?string $avatarUrl, string $positionId)
+    public function __construct(int $userId, string $email, string $firstName, string $lastName, ?string $thirdName, int $confirmedEmail, ?string $avatarUrl, int $positionId)
     {
+        $this->userId = $userId;
         $this->email = $email;
-        $this->password = $password;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->thirdName = $thirdName;
+        $this->confirmedEmail = $confirmedEmail == 1;
         $this->avatarUrl = $avatarUrl;
         $this->positionId = $positionId;
     }
 
 
-    public function getPassword(): string
+    public function getUserId(): int
     {
-        return $this->password;
+        return $this->userId;
     }
 
-    public function setPassword(string $password): void
+    public function setUserId(int $id): void
     {
-        $this->password = $password;
-    }
-
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    public function setId(int $id): void
-    {
-        $this->id = $id;
+        $this->userId = $id;
     }
 
     public function getEmail(): string
@@ -94,19 +85,29 @@ class User{
         $this->avatarUrl = $avatarUrl;
     }
 
-    public function getPositionId(): string
+    public function getPositionId(): int
     {
         return $this->positionId;
     }
 
-    public function setPositionId(string $positionId): void
+    public function setPositionId(int $positionId): void
     {
         $this->positionId = $positionId;
     }
 
+    public function isConfirmedEmail(): bool
+    {
+        return $this->confirmedEmail;
+    }
+
+    public function setConfirmedEmail(bool $confirmedEmail): void
+    {
+        $this->confirmedEmail = $confirmedEmail;
+    }
+
     public function __toString()
     {
-        return "userId=" . $this->userId . ", email=" . $this->email . ", password=" . $this->password . ", firstName=" . $this->firstName . ", lastName=" . $this->lastName . ", thirdName=" . $this->thirdName . ", avatarUrl=" . $this->avatarUrl . ", positionId=" . $this->positionId;
+        return "userId=" . $this->userId . ", email=" . $this->email . ", firstName=" . $this->firstName . ", lastName=" . $this->lastName . ", thirdName=" . $this->thirdName . ", confirmed_email=" . $this->confirmedEmail .  ", avatarUrl=" . $this->avatarUrl . ", positionId=" . $this->positionId;
     }
 
 

@@ -1,28 +1,29 @@
 <?php
 session_start();
+if($_SERVER["REQUEST_METHOD"] != "POST"){die();}
+
 $attrFirstName = "firstName";
 $attrLastName = "lastName";
 $attrEmail = "email";
 $attrPassword = "password";
 $attrConfirmPassword = "confirmPassword";
 $attrPoliticAccept = "politicAccept";
-
-$_SESSION["validation"] = [];
-$_SESSION["values"] = [
-    $attrFirstName => $_POST["firstName"],
-    $attrLastName => $_POST["lastName"],
-    $attrEmail => $_POST["email"]
-];
-
 function redirect(){
     header("location: ../../../../reg.php");
     die();
 }
 
-$captchaKey = '6Ld16FEqAAAAAI0Ag1r-dIExGXNc5y4ZWSL4FN-k';
+$_SESSION["validation"] = [];
+$_SESSION["values"] = [
+    $attrFirstName => $_POST["firstName"] ?? "",
+    $attrLastName => $_POST["lastName"] ?? "",
+    $attrEmail => $_POST["email"] ?? ""
+];
+
+const CAPTCHA_KEY = '6Ld16FEqAAAAAI0Ag1r-dIExGXNc5y4ZWSL4FN-k';
 $accepted = false;
 if (!empty($_POST['g-recaptcha-response'])) {
-    $out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $captchaKey . '&response=' . $_POST['g-recaptcha-response']);
+    $out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . CAPTCHA_KEY . '&response=' . $_POST['g-recaptcha-response']);
     $answer = json_decode($out);
     if ($answer->success) {
         $accepted = true;
@@ -30,47 +31,50 @@ if (!empty($_POST['g-recaptcha-response'])) {
 }
 
 if (!$accepted) {
-    $_SESSION["validation"] = ["captcha" => "Капча не пройдена"];
+    $_SESSION["captcha"] = false;
     redirect();
 }
+$_SESSION["validation"] = [
+    $attrFirstName => true,
+    $attrLastName => true,
+    $attrEmail => true,
+    $attrPassword => true,
+    $attrPoliticAccept => true
+];
 
 if (empty($_POST[$attrFirstName]) || strlen(trim($_POST[$attrFirstName])) == 0 || strlen(trim($_POST[$attrFirstName])) > 44) {
-    $_SESSION["validation"][$attrFirstName] = "Некорректное имя";
+    $_SESSION["validation"][$attrFirstName] = false;
 }
 if (empty($_POST[$attrLastName]) || strlen(trim($_POST[$attrLastName])) == 0 || strlen(trim($_POST[$attrLastName])) > 44) {
-    $_SESSION["validation"][$attrLastName] = "Некорректная фамилия";
+    $_SESSION["validation"][$attrLastName] = false;
 }
 if (empty($_POST[$attrEmail])) {
-    $_SESSION["validation"][$attrEmail] = "Некорректный email";
+    $_SESSION["validation"][$attrEmail] = false;
 } else {
     if (!filter_var(trim($_POST[$attrEmail]), FILTER_VALIDATE_EMAIL) || strlen(trim($_POST[$attrEmail])) > 99 ){
-        $_SESSION["validation"][$attrEmail] = "Некорректный email";
+        $_SESSION["validation"][$attrEmail] = false;
     }
 }
-if (empty($_POST[$attrPoliticAccept])) {
-    $_SESSION["validation"][$attrPoliticAccept] = "Политика не принята";
-} else {
-    if ($_POST[$attrPoliticAccept] !== "on"){
-        $_SESSION["validation"][$attrPoliticAccept] = "Политика не принята";
-    }
+if (empty($_POST[$attrPoliticAccept]) || $_POST[$attrPoliticAccept] !== "on") {
+    $_SESSION["validation"][$attrPoliticAccept] = false;
 }
 
 $passPattern = "/^[^а-яё\s]{8,32}$/iu";
 
 if (empty($_POST[$attrPassword]) || empty($_POST[$attrConfirmPassword])
 || !preg_match($passPattern, $_POST[$attrPassword]) || !preg_match($passPattern, $_POST[$attrConfirmPassword])) {
-    $_SESSION["validation"][$attrPassword] = "Некорректный пароль";
+    $_SESSION["validation"][$attrPassword] = "incorrect";
 } else {
     if ($_POST[$attrPassword] !== $_POST[$attrConfirmPassword]) {
-        $_SESSION["validation"][$attrPassword] = "Пароли не совпадают";
+        $_SESSION["validation"][$attrPassword] = "matchError";
     }
 }
-if(sizeof($_SESSION["validation"]) > 0) {
-    redirect();
+
+foreach ($_SESSION["validation"] as $value) {
+    if($value == false){
+        redirect();
+    }
 }
-
-
-
 
 
 
@@ -78,9 +82,8 @@ include_once "../../DB/dbConnections.php";
 include_once "../../classes/Student.php";
 
 
-
-//проверить зареган ли пользователь уже с таким email
 $_SESSION["regSuccess"] = false;
+$_SESSION["regError"] = "";
 $connUsers = getDBConnectionUsers();
 try{
     $sql = "SELECT * FROM Users WHERE email = :email";
@@ -88,18 +91,19 @@ try{
     $stmt->bindValue(":email", trim($_POST[$attrEmail]));
     $stmt->execute();
     if($stmt->rowCount() > 0){
-        $_SESSION["registration"]["userAlreadyExist"] = true;
+        $_SESSION["registration"] = "UserAlreadyExists";
         redirect();
     }
 } catch (PDOException $e){
-    die($e->getMessage());
+    $_SESSION["regErrors"] = "serverError";
+    die();
 }
 
 try{
     $connUsers->beginTransaction();
     $sql = "INSERT INTO Users (email, pass_hash, first_name, last_name, position_id) VALUES (?, ?, ?, ?, ?)";
     $stmt = $connUsers->prepare($sql);
-    //проверить, что дообавилась строка
+
     $rowsCount = $stmt->execute([trim($_POST["email"]), password_hash($_POST["password"], PASSWORD_DEFAULT), trim($_POST["firstName"]), trim($_POST["lastName"]), 1]);
     if($rowsCount == 0){
         throw new Exception("Ошибка добавления");
@@ -143,11 +147,17 @@ try{
     }
     $connUsers->commit();
     $_SESSION["regSuccess"] = true;
+    redirect();
 } catch (Exception $e) {
     $connUsers->rollBack();
-    die($e->getMessage());
-
+    $_SESSION["regErrors"] = "serverError";
+    redirect();
 }
 
-header('Location: ../../../../../login.php');
-die();
+/*
+ * скрипт сохраняет в сессию следующие переменные:
+ * $_SESSION["captcha"] false если не прошла капча
+ * $_SESSION["validation"] Содержит поля и false, где ошибка. В случае пароля: "incorrect" or "matchError"
+ * $_SESSION["regSuccess"] Может быть true или false
+ *  $_SESSION["regErrors"] Может быть serverError или userAlreadyExists
+ */

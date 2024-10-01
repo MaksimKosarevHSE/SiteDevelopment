@@ -4,11 +4,12 @@ function redirect(){
     header('Location: ../../../../../login.php');
     die();
 }
+
 if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
+    $_SESSION["confirmed_email"] = false;
     $code = trim($_GET["code"]);
     include_once "../../DB/dbConnections.php";
     $connUsers = getDbConnectionUsers();
-    $connUsers->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{
         $connUsers->beginTransaction();
         $sql = "SELECT * FROM ActivationCodes WHERE code = :code";
@@ -27,14 +28,11 @@ if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
             throw new Exception("Ошибка БД");
         }
         $connUsers->commit();
-        $_SESSION["confirmed_email"] = false;
+        $_SESSION["confirmed_email"] = true;
         redirect();
     } catch (Exception $e) {
         $connUsers->rollBack();
-        $_SESSION["confirmed_email"] = false;
         redirect();
-        echo $e->getMessage();
     }
 }
-$_SESSION["confirmed_email"] = false;
 redirect();
