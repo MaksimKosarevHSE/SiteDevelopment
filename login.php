@@ -1,5 +1,7 @@
 <?php
 session_start();
+include_once "src/php/auth/getUserByToken.php";
+closeAccessForAuthPages();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -11,6 +13,7 @@ session_start();
     <title>хз</title>
 </head>
 <body>
+
 <form action="src/php/auth/email/login.php" method="POST">
     <input type="text" name="email" placeholder="@edu.hse.ru">
     <input type="password" name="password" placeholder="Параоль">

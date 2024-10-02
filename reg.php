@@ -1,5 +1,7 @@
 <?php
 session_start();
+include_once "src/php/auth/getUserByToken.php";
+closeAccessForAuthPages();
 ?>
 <!DOCTYPE html>
 <html lang="ru">

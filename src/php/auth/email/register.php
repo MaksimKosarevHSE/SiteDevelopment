@@ -147,7 +147,8 @@ try{
     }
     $connUsers->commit();
     $_SESSION["regSuccess"] = true;
-    redirect();
+    header("location: ../../../../login.php");
+    die();
 } catch (Exception $e) {
     $connUsers->rollBack();
     $_SESSION["regErrors"] = "serverError";
