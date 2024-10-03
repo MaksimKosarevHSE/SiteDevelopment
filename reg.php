@@ -24,17 +24,42 @@ closeAccessForAuthPages();
         <input type="submit" value="Зарегаться">
     </form>
     <?php
-    if(!empty($_SESSION)){
 
-            print_r($_SESSION);
+    if(!empty($_SESSION["lastUrl"]) && $_SESSION["lastUrl"] == "register.php"){
+        $result = [];
+        $result["values"] = $_SESSION["values"];
+        if(!$_SESSION["captcha"]){
+            $result["captcha"] = false;
+        } else {
+            $result["captcha"] = true;
+            $result["validation"] = $_SESSION["validation"];
+            $flag = true;
+            foreach ($_SESSION["validation"] as $value) {
+                if($value != 1){
+                    $flag = false;
+                }
+            }
+            if($flag){
+                $result["regSuccess"] = $_SESSION["regSuccess"];
+                $result["regError"] = $_SESSION["regError"];
+            }
 
-
+        }
+        echo "Ошибка регистрации <br>";
+        print_r($result);
     }
-
      ?>
 </body>
 </html>
 
 <?php
-$_SESSION["validation"] = [];
+unset($_SESSION["captcha"]);
+unset($_SESSION["validation"]);
+unset($_SESSION["regSuccess"]);
+unset($_SESSION["regError"]);
+unset($_SESSION["lastUrl"]);
+unset($_SESSION["values"]);
+
+
 ?>
+

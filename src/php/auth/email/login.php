@@ -22,16 +22,16 @@ if (!empty($_POST['g-recaptcha-response'])) {
 }
 
 if (!$accepted) {
-    $_SESSION["validationLogin"]["captcha"] = "Капча не пройдена";
+    $_SESSION["validationLogin"]["captcha"] = 0;
     redirect();
 }
-$_SESSION["validationLogin"]["personData"] = true;
+$_SESSION["validationLogin"]["personData"] = 1;
 $passPattern = "/^[^а-яё\s]{8,32}$/iu";
 if(empty(trim($_POST[$attrEmail])) || empty(trim($_POST[$attrPassword]))  || !filter_var(trim($_POST[$attrEmail]), FILTER_VALIDATE_EMAIL) || !preg_match($passPattern, $_POST[$attrPassword])){
-    $_SESSION["validationLogin"]["personData"] = false;
+    $_SESSION["validationLogin"]["personData"] = 0;
 }
 foreach($_SESSION["validationLogin"] as $value){
-    if ($value == false){
+    if ($value == 0){
         redirect();
     }
 }
@@ -51,14 +51,15 @@ try{
         throw new Exception("userNotFound");
     }
         $row = $stmt->fetch();
+    if (!password_verify(trim($_POST[$attrPassword]), $row["pass_hash"])){
+        $_SESSION["auth"] = "incorrectPassword";
+        throw new Exception("incorrectPassword");
+    }
         if ($row["confirmed_email"] != 1) {
             $_SESSION["auth"] = "noActivate";
             throw new Exception("noActivate");
         }
-        if (!password_verify(trim($_POST[$attrPassword]), $row["pass_hash"])){
-            $_SESSION["auth"] = "incorrectPassword";
-            throw new Exception("incorrectPassword");
-        }
+
 
         $token = bin2hex(random_bytes(128));
         $timestamp = time();

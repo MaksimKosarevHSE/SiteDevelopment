@@ -12,7 +12,7 @@ function redirect(){
     header("location: ../../../../reg.php");
     die();
 }
-
+$_SESSION["lastUrl"] = "register.php";
 $_SESSION["validation"] = [];
 $_SESSION["values"] = [
     $attrFirstName => $_POST["firstName"] ?? "",
@@ -33,45 +33,47 @@ if (!empty($_POST['g-recaptcha-response'])) {
 if (!$accepted) {
     $_SESSION["captcha"] = false;
     redirect();
+} else {
+    $_SESSION["captcha"] = true;
 }
 $_SESSION["validation"] = [
-    $attrFirstName => true,
-    $attrLastName => true,
-    $attrEmail => true,
-    $attrPassword => true,
-    $attrPoliticAccept => true
+    $attrFirstName => 1,
+    $attrLastName => 1,
+    $attrEmail => 1,
+    $attrPassword => 1,
+    $attrPoliticAccept => 1
 ];
 
 if (empty($_POST[$attrFirstName]) || strlen(trim($_POST[$attrFirstName])) == 0 || strlen(trim($_POST[$attrFirstName])) > 44) {
-    $_SESSION["validation"][$attrFirstName] = false;
+    $_SESSION["validation"][$attrFirstName] = 0;
 }
 if (empty($_POST[$attrLastName]) || strlen(trim($_POST[$attrLastName])) == 0 || strlen(trim($_POST[$attrLastName])) > 44) {
-    $_SESSION["validation"][$attrLastName] = false;
+    $_SESSION["validation"][$attrLastName] = 0;
 }
 if (empty($_POST[$attrEmail])) {
-    $_SESSION["validation"][$attrEmail] = false;
+    $_SESSION["validation"][$attrEmail] = 0;
 } else {
     if (!filter_var(trim($_POST[$attrEmail]), FILTER_VALIDATE_EMAIL) || strlen(trim($_POST[$attrEmail])) > 99 ){
-        $_SESSION["validation"][$attrEmail] = false;
+        $_SESSION["validation"][$attrEmail] = 0;
     }
 }
 if (empty($_POST[$attrPoliticAccept]) || $_POST[$attrPoliticAccept] !== "on") {
-    $_SESSION["validation"][$attrPoliticAccept] = false;
+    $_SESSION["validation"][$attrPoliticAccept] = 0;
 }
 
 $passPattern = "/^[^а-яё\s]{8,32}$/iu";
 
 if (empty($_POST[$attrPassword]) || empty($_POST[$attrConfirmPassword])
 || !preg_match($passPattern, $_POST[$attrPassword]) || !preg_match($passPattern, $_POST[$attrConfirmPassword])) {
-    $_SESSION["validation"][$attrPassword] = "incorrect";
+    $_SESSION["validation"][$attrPassword] = 2;
 } else {
     if ($_POST[$attrPassword] !== $_POST[$attrConfirmPassword]) {
-        $_SESSION["validation"][$attrPassword] = "matchError";
+        $_SESSION["validation"][$attrPassword] = 3;
     }
 }
 
 foreach ($_SESSION["validation"] as $value) {
-    if($value == false){
+    if($value != 1){
         redirect();
     }
 }
@@ -91,7 +93,7 @@ try{
     $stmt->bindValue(":email", trim($_POST[$attrEmail]));
     $stmt->execute();
     if($stmt->rowCount() > 0){
-        $_SESSION["registration"] = "UserAlreadyExists";
+        $_SESSION["regError"] = "UserAlreadyExists";
         redirect();
     }
 } catch (PDOException $e){
@@ -151,7 +153,7 @@ try{
     die();
 } catch (Exception $e) {
     $connUsers->rollBack();
-    $_SESSION["regErrors"] = "serverError";
+    $_SESSION["regError"] = "serverError";
     redirect();
 }
 
