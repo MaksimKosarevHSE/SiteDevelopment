@@ -82,7 +82,7 @@ foreach ($_SESSION["validation"] as $value) {
 
 include_once "../../DB/dbConnections.php";
 include_once "../../classes/Student.php";
-
+include_once "sendCode.php";
 
 $_SESSION["regSuccess"] = false;
 $_SESSION["regError"] = "";
@@ -137,14 +137,11 @@ try{
     $rowsCount = $stmt->execute();
     if($rowsCount == 0){throw new Exception("Ошибка добавления кода");}
 
-    $to  = trim($_POST[$attrEmail]);
-    $subject = "Подтверждение регистрации";
-    $href = "https://24knt9develop.ru/src/php/auth/email/confirm_email.php/?code=$confirmEmailHash";
-    $message = " <p>Перейдите по ссылке, чтобы завершить регистрацию</p>
-  </br> <a href=\"$href\">Подтвердить</a>";
-    $headers = "Content-type: text/html; charset=utf-8 \r\n";
 
-    if(!mail($to, $subject, $message, $headers)){
+    $href = "https://24knt9develop.ru/src/php/auth/email/confirm_email.php/?code=$confirmEmailHash";
+
+
+    if(!sendCode(trim($_POST[$attrEmail]), trim($_POST[$attrFirstName]), $href)){
         throw new Exception("Ошибка отправки письма");
     }
     $connUsers->commit();
@@ -156,11 +153,3 @@ try{
     $_SESSION["regError"] = "serverError";
     redirect();
 }
-
-/*
- * скрипт сохраняет в сессию следующие переменные:
- * $_SESSION["captcha"] false если не прошла капча
- * $_SESSION["validation"] Содержит поля и false, где ошибка. В случае пароля: "incorrect" or "matchError"
- * $_SESSION["regSuccess"] Может быть true или false
- *  $_SESSION["regErrors"] Может быть serverError или userAlreadyExists
- */
