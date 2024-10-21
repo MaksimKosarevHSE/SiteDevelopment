@@ -29,9 +29,10 @@ if (!empty($_POST['g-recaptcha-response'])) {
         $accepted = true;
     }
 }
-
+$_SESSION["err"] = "";
 if (!$accepted) {
     $_SESSION["captcha"] = false;
+    $_SESSION["err"] = "Капча не пройдена";
     redirect();
 } else {
     $_SESSION["captcha"] = true;
@@ -46,19 +47,35 @@ $_SESSION["validation"] = [
 
 if (empty($_POST[$attrFirstName]) || strlen(trim($_POST[$attrFirstName])) == 0 || strlen(trim($_POST[$attrFirstName])) > 44) {
     $_SESSION["validation"][$attrFirstName] = 0;
+    $_SESSION["err"] = "Введите имя";
 }
 if (empty($_POST[$attrLastName]) || strlen(trim($_POST[$attrLastName])) == 0 || strlen(trim($_POST[$attrLastName])) > 44) {
     $_SESSION["validation"][$attrLastName] = 0;
+    if ($_SESSION["err"] != "") {
+        $_SESSION["err"] = "Введите фамилию";
+    }
+
 }
 if (empty($_POST[$attrEmail])) {
     $_SESSION["validation"][$attrEmail] = 0;
+    if ($_SESSION["err"] != "") {
+        $_SESSION["err"] = "Введите email";
+    }
 } else {
     if (!filter_var(trim($_POST[$attrEmail]), FILTER_VALIDATE_EMAIL) || strlen(trim($_POST[$attrEmail])) > 99 ){
+        if ($_SESSION["err"] != "") {
+            $_SESSION["err"] = "Некорректный email";
+        }
+
         $_SESSION["validation"][$attrEmail] = 0;
     }
 }
 if (empty($_POST[$attrPoliticAccept]) || $_POST[$attrPoliticAccept] !== "on") {
     $_SESSION["validation"][$attrPoliticAccept] = 0;
+    if ($_SESSION["err"] != "") {
+        $_SESSION["err"] = "Политика конфидециальности не принята";
+    }
+
 }
 
 $passPattern = "/^[^а-яё\s]{8,32}$/iu";
@@ -66,9 +83,17 @@ $passPattern = "/^[^а-яё\s]{8,32}$/iu";
 if (empty($_POST[$attrPassword]) || empty($_POST[$attrConfirmPassword])
 || !preg_match($passPattern, $_POST[$attrPassword]) || !preg_match($passPattern, $_POST[$attrConfirmPassword])) {
     $_SESSION["validation"][$attrPassword] = 2;
+    if ($_SESSION["err"] != "") {
+        $_SESSION["err"] = "Пароль должен состоять минимум из 8 символов и не включать кириллицу";
+    }
+
 } else {
     if ($_POST[$attrPassword] !== $_POST[$attrConfirmPassword]) {
         $_SESSION["validation"][$attrPassword] = 3;
+        if ($_SESSION["err"] != "") {
+            $_SESSION["err"] = "Пароли не совпадают";
+        }
+
     }
 }
 
@@ -85,7 +110,7 @@ include_once "../../classes/Student.php";
 include_once "sendCode.php";
 
 $_SESSION["regSuccess"] = false;
-$_SESSION["regError"] = "";
+$_SESSION["err"] = "";
 $connUsers = getDBConnectionUsers();
 try{
     $sql = "SELECT * FROM Users WHERE email = :email";
@@ -93,11 +118,11 @@ try{
     $stmt->bindValue(":email", trim($_POST[$attrEmail]));
     $stmt->execute();
     if($stmt->rowCount() > 0){
-        $_SESSION["regError"] = "UserAlreadyExists";
+        $_SESSION["reg"] = "Пользователь с таким email уже существует";
         redirect();
     }
 } catch (PDOException $e){
-    $_SESSION["regErrors"] = "serverError";
+    $_SESSION["reg"] = "Непредвиденная ошибка сервера";
     die();
 }
 
@@ -150,6 +175,6 @@ try{
     die();
 } catch (Exception $e) {
     $connUsers->rollBack();
-    $_SESSION["regError"] = "serverError";
+    $_SESSION["reg"] = "Непредвиденная ошибка сервера";
     redirect();
 }

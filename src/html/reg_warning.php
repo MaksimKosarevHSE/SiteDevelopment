@@ -2,6 +2,19 @@
 session_start();
 include_once "../php/auth/getUserByToken.php";
 closeAccessForAuthPages();
+if (empty($_SESSION['values'])) {
+    header('Location: registration.php');
+}
+$values = $_SESSION['values'];
+$msg = "";
+if (!empty($_SESSION["err"])) {
+    $msg = $_SESSION["err"];
+}
+unset($_SESSION['values']);
+unset($_SESSION['err']);
+unset($_SESSION["regSuccess"]);
+unset( $_SESSION["captcha"]);
+unset($_SESSION["validation"]);
 ?>
 <html>
 
@@ -26,24 +39,24 @@ closeAccessForAuthPages();
                         <div class="formbg-inner padding-horizontal--48">
                             <img src="../img/fon.png" alt="" class="reg_img">
                             <br>
-                            <div class="warning"><p style="margin-left: 1rem;">Пользователь уже существует в системе</p></div>
+                            <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
                             <span class="padding-bottom--15" style="padding-top: 1rem;">Введите данные</span>
                             <form id="stripe-login" action="../php/auth/email/register.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <label for="email">Имя</label>
-                                    <input type="name" name="firstName">
+                                    <input type="name" name="firstName" value="<?php echo $values['firstName']?>">
                                 </div>
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Фамилия</label>
                                     </div>
-                                    <input type="surname" name="lastName">
+                                    <input type="surname" name="lastName" value="<?php echo $values['lastName']?>>
                                 </div>
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>
                                     </div>
-                                    <input type="email" name="email">
+                                    <input type="email" name="email" value="<?php echo $values['email']?>>
                                 </div>
                                 <br>
                                 <div class="field padding-bottom--24">

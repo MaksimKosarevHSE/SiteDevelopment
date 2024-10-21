@@ -2,6 +2,19 @@
 session_start();
 include_once "../php/auth/getUserByToken.php";
 closeAccessForAuthPages();
+$email = "";
+if (!empty($_SESSION["last_email"])){
+    $email = $_SESSION["last_email"];
+}
+$msg = "";
+if (!empty($_SESSION["auth"])){
+    $msg = $_SESSION["auth"];
+} else {
+    header("Location: login.php");
+}
+unset($_SESSION["last_email"]);
+unset($_SESSION["auth"]);
+unset($_SESSION["validationLogin"]);
 ?>
 
 <html>
@@ -27,14 +40,14 @@ closeAccessForAuthPages();
                         <div class="formbg-inner padding-horizontal--48">
                             <img src="../img/login_meme.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
-                            <div class="warning"><p style="margin-left: 1rem;">Неверный логин или пароль</p></div>
+                            <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
                             <span class="padding-bottom--15" style="padding-top: 1rem;">Введите данные</span>
                             <form id="stripe-login">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>
                                     </div>
-                                    <input type="email" name="email">
+                                    <input type="email" name="email" value="<?php echo $email?>">
                                 </div>
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
