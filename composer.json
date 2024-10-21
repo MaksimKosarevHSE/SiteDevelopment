@@ -1,0 +1,12 @@
+{
+    "require": {
+        "arhitector/yandex": "dev-master",
+        "leonied7/yandex-disk-api": "dev-master",
+        "shuchkin/simplexlsx": "^1.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
