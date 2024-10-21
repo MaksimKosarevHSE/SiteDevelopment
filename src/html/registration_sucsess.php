@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once "../php/auth/getUserByToken.php";
+closeAccessForAuthPages();
+?>
 <html>
 
 <head>
@@ -23,7 +28,7 @@
                             <div class="warning" style="background: rgba(47, 255, 61, 0.5);"><p style="margin-left: 1rem; ">Вы успешно зарегистрировались. Можете войти в свой аккаунт</p></div>
                             <form id="stripe-login">
                                 <div class="field padding-bottom--24" style="margin-top: 3rem;">
-                                    <a href="login.html"><div class="btn_sucsess"><p style="margin-top: 1.5%;">Перейти к входу</p></div></a>
+                                    <a href="login.php"><div class="btn_sucsess"><p style="margin-top: 1.5%;">Перейти к входу</p></div></a>
                                 </div>
                                 <div class="field">
                                 </div>

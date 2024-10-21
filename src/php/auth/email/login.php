@@ -2,7 +2,7 @@
 session_start();
 $_SESSION["validationLogin"] = [];
 function redirect(){
-    header("location: ../../../../login.php");
+    header("location: ../../../html/login_warning.php");
     die();
 }
 

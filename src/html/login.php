@@ -1,9 +1,16 @@
+<?php
+session_start();
+include_once "../php/auth/getUserByToken.php";
+closeAccessForAuthPages();
+?>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Вход</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!--Подключение капчи-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -20,7 +27,7 @@
                             <img src="../img/login_meme.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
                             <span class="padding-bottom--15">Введите данные</span>
-                            <form id="stripe-login">
+                            <form id="stripe-login" action="../php/auth/email/login.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>
@@ -42,6 +49,7 @@
                                         <input type="checkbox" name="checkbox"> Запомнить меня
                                     </label>
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
                                 <div class="field padding-bottom--24">
                                     <input type="submit" name="submit" value="Войти">
                                 </div>
@@ -51,7 +59,7 @@
                         </div>
                     </div>
                     <div class="footer-link padding-top--24">
-                        <span> Вас ещё нет в системе? <a href="registration.html">Зарегистрироваться</a></span>
+                        <span> Вас ещё нет в системе? <a href="registration.php">Зарегистрироваться</a></span>
                         <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                         </div>
                     </div>
