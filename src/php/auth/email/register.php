@@ -51,50 +51,52 @@ if (empty($_POST[$attrFirstName]) || strlen(trim($_POST[$attrFirstName])) == 0 |
 }
 if (empty($_POST[$attrLastName]) || strlen(trim($_POST[$attrLastName])) == 0 || strlen(trim($_POST[$attrLastName])) > 44) {
     $_SESSION["validation"][$attrLastName] = 0;
-    if ($_SESSION["err"] != "") {
+    if ($_SESSION["err"] == "") {
         $_SESSION["err"] = "Введите фамилию";
     }
 
 }
 if (empty($_POST[$attrEmail])) {
     $_SESSION["validation"][$attrEmail] = 0;
-    if ($_SESSION["err"] != "") {
+    if ($_SESSION["err"] == "") {
         $_SESSION["err"] = "Введите email";
     }
 } else {
     if (!filter_var(trim($_POST[$attrEmail]), FILTER_VALIDATE_EMAIL) || strlen(trim($_POST[$attrEmail])) > 99 ){
-        if ($_SESSION["err"] != "") {
+        if ($_SESSION["err"] == "") {
             $_SESSION["err"] = "Некорректный email";
         }
 
         $_SESSION["validation"][$attrEmail] = 0;
     }
 }
-if (empty($_POST[$attrPoliticAccept]) || $_POST[$attrPoliticAccept] !== "on") {
-    $_SESSION["validation"][$attrPoliticAccept] = 0;
-    if ($_SESSION["err"] != "") {
-        $_SESSION["err"] = "Политика конфидециальности не принята";
-    }
 
-}
 
 $passPattern = "/^[^а-яё\s]{8,32}$/iu";
 
 if (empty($_POST[$attrPassword]) || empty($_POST[$attrConfirmPassword])
 || !preg_match($passPattern, $_POST[$attrPassword]) || !preg_match($passPattern, $_POST[$attrConfirmPassword])) {
     $_SESSION["validation"][$attrPassword] = 2;
-    if ($_SESSION["err"] != "") {
+    if ($_SESSION["err"] == "") {
         $_SESSION["err"] = "Пароль должен состоять минимум из 8 символов и не включать кириллицу";
     }
 
 } else {
     if ($_POST[$attrPassword] !== $_POST[$attrConfirmPassword]) {
         $_SESSION["validation"][$attrPassword] = 3;
-        if ($_SESSION["err"] != "") {
+        if ($_SESSION["err"] == "") {
             $_SESSION["err"] = "Пароли не совпадают";
         }
 
     }
+}
+
+if (empty($_POST[$attrPoliticAccept]) || $_POST[$attrPoliticAccept] !== "on") {
+    $_SESSION["validation"][$attrPoliticAccept] = 0;
+    if ($_SESSION["err"] == "") {
+        $_SESSION["err"] = "Политика конфидециальности не принята";
+    }
+
 }
 
 foreach ($_SESSION["validation"] as $value) {
@@ -118,11 +120,11 @@ try{
     $stmt->bindValue(":email", trim($_POST[$attrEmail]));
     $stmt->execute();
     if($stmt->rowCount() > 0){
-        $_SESSION["reg"] = "Пользователь с таким email уже существует";
+        $_SESSION["err"] = "Пользователь с таким email уже существует";
         redirect();
     }
 } catch (PDOException $e){
-    $_SESSION["reg"] = "Непредвиденная ошибка сервера";
+    $_SESSION["err"] = "Непредвиденная ошибка сервера";
     die();
 }
 
@@ -171,10 +173,10 @@ try{
     }
     $connUsers->commit();
     $_SESSION["regSuccess"] = true;
-    header("location: location: ../../../html/registration_success.php");
+    header("location: ../../../html/registration_sucsess.php");
     die();
 } catch (Exception $e) {
     $connUsers->rollBack();
-    $_SESSION["reg"] = "Непредвиденная ошибка сервера";
+    $_SESSION["err"] = "Непредвиденная ошибка сервера";
     redirect();
 }

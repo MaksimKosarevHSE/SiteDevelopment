@@ -2,6 +2,13 @@
 session_start();
 include_once "../php/auth/getUserByToken.php";
 closeAccessForAuthPages();
+if (!empty($_SESSION["regSuccess"]) && $_SESSION["regSuccess"] == true) {
+    unset($_SESSION['values']);
+    unset($_SESSION['err']);
+    unset($_SESSION["regSuccess"]);
+    unset( $_SESSION["captcha"]);
+    unset($_SESSION["validation"]);
+}
 ?>
 <html>
 

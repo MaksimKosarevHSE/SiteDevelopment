@@ -85,7 +85,7 @@ try{
     unset($_SESSION["last_email"]);
     unset($_SESSION["auth"]);
     unset($_SESSION["validationLogin"]);
-        header("location: ../../../../home.php");
+        header("location: main.php");
 
 
 } catch (Exception $e){

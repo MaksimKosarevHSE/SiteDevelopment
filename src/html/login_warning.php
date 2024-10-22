@@ -42,7 +42,7 @@ unset($_SESSION["validationLogin"]);
                             <br>
                             <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
                             <span class="padding-bottom--15" style="padding-top: 1rem;">Введите данные</span>
-                            <form id="stripe-login">
+                            <form id="stripe-login" action="../php/auth/email/login.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>

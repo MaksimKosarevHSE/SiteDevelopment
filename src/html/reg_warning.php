@@ -44,19 +44,19 @@ unset($_SESSION["validation"]);
                             <form id="stripe-login" action="../php/auth/email/register.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <label for="email">Имя</label>
-                                    <input type="name" name="firstName" value="<?php echo $values['firstName']?>">
+                                    <input type="name" name="firstName" value="<?php echo $values['firstName'];?>">
                                 </div>
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Фамилия</label>
                                     </div>
-                                    <input type="surname" name="lastName" value="<?php echo $values['lastName']?>>
+                                    <input type="surname" name="lastName" value="<?php echo $values['lastName'];?>">
                                 </div>
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>
                                     </div>
-                                    <input type="email" name="email" value="<?php echo $values['email']?>>
+                                    <input type="email" name="email" value="<?php echo $values['email'];?>">
                                 </div>
                                 <br>
                                 <div class="field padding-bottom--24">
