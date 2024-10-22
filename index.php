@@ -1,3 +1,6 @@
+<?php
+    header("location: src/html/index.php");
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

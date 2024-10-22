@@ -1,8 +1,24 @@
 <?php
-session_start();
+
 include_once "../php/auth/getUserByToken.php";
 closeAccessForAuthPages();
+
+session_start();
+$msg = "";
+if (!empty($_SESSION["status"])){
+    $msg = $_SESSION["status"];
+} else {
+    header("location: forget_password.php");
+}
+$email = "";
+if (!empty($_POST["email"])){
+    $email = $_POST["email"];
+}
+unset($_SESSION["status"]);
+unset($_SESSION["email"]);
 ?>
+
+
 <html>
 
 <head>
@@ -18,40 +34,26 @@ closeAccessForAuthPages();
         <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
             <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
                 <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                    <h1><a href="" rel="dofollow">Вход</a></h1>
+                    <h1><a href="" rel="dofollow">Ввостановление пароля</a></h1>
                 </div>
                 <div class="formbg-outer">
                     <div class="formbg">
                         
                         <div class="formbg-inner padding-horizontal--48">
-                            <img src="../img/login_meme.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
+                            <img src="../img/forget.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
-                            <span class="padding-bottom--15">Введите данные</span>
-                            <form id="stripe-login" action="../php/auth/email/login.php" method="POST">
+                            <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
+                            <span class="padding-bottom--15" style="padding-top: 1rem;">Введите почту, мы отправим вам письмо для восстановления</span>
+                            <form id="stripe-login" action="../php/auth/email/sendResetCode.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>
                                     </div>
-                                    <input type="email" name="email">
-                                </div>
-                                <div class="field padding-bottom--24">
-                                    <div class="grid--50-50">
-                                        <label for="password">Пароль</label>
-                                        <div class="reset-pass">
-                                            <a href="forget_password.php">Забыли пароль?</a>
-                                          </div>
-                                    </div>
-                                    
-                                    <input type="password" name="password">
-                                </div>
-                                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
-                                    <label for="checkbox">
-                                        <input type="checkbox" name="checkbox"> Запомнить меня
-                                    </label>
+                                    <input type="email" name="email" value = "<?php echo $email?>">
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
                                 <div class="field padding-bottom--24">
-                                    <input type="submit" name="submit" value="Войти">
+                                    <input type="submit" name="submit" value="Отправить">
                                 </div>
                                 <div class="field">
                                 </div>

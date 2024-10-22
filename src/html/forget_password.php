@@ -1,9 +1,16 @@
+<?php
+session_start();
+include_once "../php/auth/getUserByToken.php";
+closeAccessForAuthPages();
+?>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Вход</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!--Подключение капчи-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -19,15 +26,15 @@
                         <div class="formbg-inner padding-horizontal--48">
                             <img src="../img/forget.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
-                            <div class="warning"><p style="margin-left: 1rem;">Такой почты нету в нашей системе ( Зарегистрируйтесь!</p></div>
-                            <span class="padding-bottom--15" style="padding-top: 1rem;">Введите почту, мы отправим вам письмо для восстановления</span>
-                            <form id="stripe-login">
+                            <span class="padding-bottom--15">Введите почту, мы отправим вам письмо для восстановления</span>
+                            <form id="stripe-login" action="../php/auth/email/sendResetCode.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>
                                     </div>
                                     <input type="email" name="email">
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
                                 <div class="field padding-bottom--24">
                                     <input type="submit" name="submit" value="Отправить">
                                 </div>

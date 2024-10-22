@@ -1,9 +1,25 @@
+<?php
+
+session_start();
+include_once "../php/auth/getUserByToken.php";
+closeAccessForAuthPages();
+
+$msg = "";
+if (!empty($_SESSION["errStatus"])){
+    $msg = $_SESSION["errStatus"];
+} else {
+    header("location: reset.php");
+}
+unset($_SESSION["errStatus"]);
+?>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Изменение пароля</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!--Подключение капчи-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -19,9 +35,13 @@
                         <div class="formbg-inner padding-horizontal--48">
                             <img src="../img/reset.webp" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
-                            <div class="warning"><p style="margin-left: 1rem;">Пароль совпадает с предыдушим! Напрягись.</p></div>
+                            <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
                             <span class="padding-bottom--15" style="margin-top: 2rem;">Придумайте и введите новый пароль</span>
-                            <form id="stripe-login">
+                            <form id="stripe-login" action="../php/auth/email/resetPassword.php<?php
+                            if (!empty($_GET["code"])){
+                                echo "?code=".$_GET["code"];
+                            }
+                            ?>" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Пароль</label>
@@ -33,8 +53,9 @@
                                         <label for="password">Повторите пароль</label>
                                     </div>
                                     
-                                    <input type="password" name="password">
+                                    <input type="password" name="confirmPassword">
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
                                 <div class="field padding-bottom--24">
                                     <input type="submit" name="submit" value="Изменить">
                                 </div>

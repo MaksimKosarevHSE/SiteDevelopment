@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+include_once "../php/auth/getUserByToken.php";
+closeAccessForAuthPages();
+
+?>
 <html>
 
 <head>
@@ -17,18 +24,13 @@
                     <div class="formbg">
                         
                         <div class="formbg-inner padding-horizontal--48">
-                            <img src="../img/forget.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
+                            <img src="../img/thanks.png" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
-                            <span class="padding-bottom--15">Введите почту, мы отправим вам письмо для восстановления</span>
+                            <span class="padding-bottom--15" style="text-align: center; font-size: 2rem; ">Успешно</span>
+                            <div class="warning" style="background: rgba(47, 255, 61, 0.5);"><p style="margin-left: 1rem; ">На вашу почту было отправлено письмо для изменения пароля.</p></div>
                             <form id="stripe-login">
-                                <div class="field padding-bottom--24">
-                                    <div class="grid--50-50">
-                                        <label for="password">Почта</label>
-                                    </div>
-                                    <input type="email" name="email">
-                                </div>
-                                <div class="field padding-bottom--24">
-                                    <input type="submit" name="submit" value="Отправить">
+                                <div class="field padding-bottom--24" style="margin-top: 3rem;">
+                                    <a href="login.php"><div class="btn_sucsess"><p style="margin-top: 1.5%;">Вернуться к входу</p></div></a>
                                 </div>
                                 <div class="field">
                                 </div>

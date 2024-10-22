@@ -1,9 +1,21 @@
+<?php
+session_start();
+include_once "../php/auth/getUserByToken.php";
+closeAccessForAuthPages();
+
+if (empty($_GET["code"])){
+    header('Location: forget_password.php');
+}
+
+?>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Изменение пароля</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!--Подключение капчи-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -20,7 +32,11 @@
                             <img src="../img/reset.webp" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
                             <span class="padding-bottom--15">Придумайте и введите новый пароль</span>
-                            <form id="stripe-login">
+                            <form id="stripe-login" action="../php/auth/email/resetPassword.php<?php
+                            if (!empty($_GET["code"])){
+                                echo "?code=".$_GET["code"];
+                            }
+                            ?>" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Пароль</label>
@@ -32,8 +48,9 @@
                                         <label for="password">Повторите пароль</label>
                                     </div>
                                     
-                                    <input type="password" name="password">
+                                    <input type="password" name="confirmPassword">
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
                                 <div class="field padding-bottom--24">
                                     <input type="submit" name="submit" value="Изменить">
                                 </div>
