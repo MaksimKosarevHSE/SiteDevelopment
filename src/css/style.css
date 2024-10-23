@@ -86,6 +86,7 @@ body {
       flex-direction: column;
   }
   .loginbackground-gridContainer {
+      display: -ms-grid;
       display: grid;
       -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end];
       grid-template-columns: [start] 1fr [left-gutter] repeat(16,86.6px) [left-gutter] 1fr [end];
@@ -254,3 +255,4 @@ body {
 .btn_sucsess:hover {
   transform: scale(1.02);
 }
+
