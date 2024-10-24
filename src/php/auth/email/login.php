@@ -2,7 +2,7 @@
 session_start();
 
 function redirect(){
-    header("location: ../../../html/login_warning.php");
+    header("location: ../../../../login_warning.php");
     die();
 }
 
@@ -85,7 +85,7 @@ try{
     unset($_SESSION["last_email"]);
     unset($_SESSION["auth"]);
     unset($_SESSION["validationLogin"]);
-        header("location: ../../../html/main.php");
+        header("location: ../../../../home.php");
 
 
 } catch (Exception $e){

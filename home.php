@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../php/auth/getUserByToken.php";
+include_once "src/php/auth/getUserByToken.php";
 $user = getUserByTokenOrRedirect();
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ $user = getUserByTokenOrRedirect();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="src/resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="src/css/main.css">
     <link rel="stylesheet" href="src/resources/fonts/Georgia/stylesheet.css" />
 	<link rel="stylesheet" href="src/resources/fonts/Lato/stylesheet.css" />
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Личный кабинет</title>

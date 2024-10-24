@@ -1,18 +1,10 @@
 <?php
-//require_once __DIR__ . "/vendor/autoload.php";
-//use \Leonied7\Yandex\Disk;
-//$yandexDisk = new Disk('y0_AgAAAAB5LzR1AAyiygAAAAEVDlQeAACLgQBwOIJBD5b4ZLoxA-lwhlXHgg');
-//
-//$file = $yandexDisk->file('file.xlsx');
-//$file->download(); //bool
-//// получение последнего результата запроса
-//$result = Disk\Collection\ResultList::getInstance()->getLast();
-//file_put_contents(  'file.xlsx', $result->getActualResult());
+
 require_once __DIR__ . "/vendor/autoload.php";
 
 use Shuchkin\SimpleXLSX;
 $arr = [];
-if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
+if ( $xlsx = SimpleXLSX::parse('src/resources/php_res/file.xlsx') ) {
     $table = $xlsx->rows();
 
 

@@ -29,7 +29,7 @@ function getUserByToken() : ?User{
 function getUserByTokenOrRedirect() : User{
     $user = getUserByToken();
     if ($user == null){
-        header("Location: ../../src/html/login.php");
+        header("Location: ../../../../login.php");
     }
     return $user;
 }
@@ -38,6 +38,6 @@ function getUserByTokenOrRedirect() : User{
 function closeAccessForAuthPages() : void{
     $user = getUserByToken();
     if ($user != null){
-        header("Location: ../../src/html/index.php");
+        header("Location: ../../../../index.php");
     }
 }

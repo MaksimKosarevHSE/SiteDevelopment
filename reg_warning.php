@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../php/auth/getUserByToken.php";
+include_once "src/php/auth/getUserByToken.php";
 closeAccessForAuthPages();
 if (empty($_SESSION['values'])) {
     header('Location: registration.php');
@@ -21,7 +21,7 @@ unset($_SESSION["validation"]);
 <head>
     <meta charset="utf-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
     <!--Подключение капчи-->
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
@@ -37,11 +37,11 @@ unset($_SESSION["validation"]);
                     <div class="formbg">
                         
                         <div class="formbg-inner padding-horizontal--48">
-                            <img src="../img/fon.png" alt="" class="reg_img">
+                            <img src="src/resources/img/fon.png" alt="" class="reg_img">
                             <br>
                             <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
                             <span class="padding-bottom--15" style="padding-top: 1rem;">Введите данные</span>
-                            <form id="stripe-login" action="../php/auth/email/register.php" method="POST">
+                            <form id="stripe-login" action="src/php/auth/email/register.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <label for="email">Имя</label>
                                     <input type="name" name="firstName" value="<?php echo $values['firstName'];?>">
@@ -71,7 +71,7 @@ unset($_SESSION["validation"]);
                                     </div>
                                     <input type="password" name="confirmPassword">
                                 </div>
-                                <div class="f   ield field-checkbox padding-bottom--24 flex-flex align-center">
+                                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                                     <label for="checkbox">
                                         <input type="checkbox" name="politicAccept"> Соглащаюсь с политикой
                                     </label>

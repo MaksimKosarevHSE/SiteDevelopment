@@ -6,7 +6,7 @@
     <title>Главная</title>
 </head>
 <body>
-<a href="main.php">main</a>
+<a href="home.php">main</a>
 <a href="registration.php">register</a>
 <a href="login.php">login</a>
 </html>

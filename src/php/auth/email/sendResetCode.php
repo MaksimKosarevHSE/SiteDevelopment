@@ -2,7 +2,7 @@
 session_start();
 
 function redirect(){
-    header("location: ../../../html/forget_password_warning.php");
+    header("location: ../../../../forget_password_warning.php");
     die();
 }
 if($_SERVER["REQUEST_METHOD"] != "POST"){die();}
@@ -63,7 +63,7 @@ try{
     if($rowsCount == 0){throw new Exception("Ошибка добавления кода");}
 
 
-    $href = "https://24knt9develop.ru/src/html/reset.php?code=$hash_code";
+    $href = "https://24knt9develop.ru/reset.php?code=$hash_code";
 
 
     if(!sendResetCode(trim($_POST["email"]), "Пользователь", $href)){
@@ -72,7 +72,7 @@ try{
     $conn->commit();
     unset($_SESSION["status"]);
     unset($_SESSION["email"]);
-    header("location: ../../../html/forget_password_sucsess.php");
+    header("location: ../../../../forget_password_success.php");
 
     } catch (Exception $e) {
     $conn->rollBack();

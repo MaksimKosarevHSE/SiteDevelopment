@@ -2,7 +2,7 @@
 session_start();
 function redirect(){
     $c = $_GET["code"];
-    header("Location: ../../../html/reset_warning.php?code=$c");
+    header("Location: ../../../../reset_warning.php?code=$c");
     die();
 }
 
@@ -87,7 +87,7 @@ if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
         $connUsers->commit();
         unset($_SESSION["status"]);
         unset($_SESSION["errStatus"]);
-        header("Location: ../../../html/reset_sucsess.php");
+        header("Location: ../../../../reset_success.php");
 
 
     } catch (Exception $e) {
@@ -95,10 +95,10 @@ if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
             $_SESSION["status"] = "Непредвиденная ошибка";
         }
         $connUsers->rollback();
-        header("Location: ../../../html/forget_password_warning.php");
+        header("Location: ../../../../forget_password_warning.php");
     }
 } else {
-   header("Location: ../../../html/forget_password.php");
+   header("Location: ../../../../forget_password.php");
 
 }
 ?>

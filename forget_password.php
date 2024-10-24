@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../php/auth/getUserByToken.php";
+include_once "src/php/auth/getUserByToken.php";
 closeAccessForAuthPages();
 ?>
 <html>
@@ -8,7 +8,7 @@ closeAccessForAuthPages();
 <head>
     <meta charset="utf-8">
     <title>Вход</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
     <!--Подключение капчи-->
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
@@ -22,12 +22,12 @@ closeAccessForAuthPages();
                 </div>
                 <div class="formbg-outer">
                     <div class="formbg">
-                        
+
                         <div class="formbg-inner padding-horizontal--48">
-                            <img src="../img/forget.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
+                            <img src="src/resources/img/forget.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
                             <span class="padding-bottom--15">Введите почту, мы отправим вам письмо для восстановления</span>
-                            <form id="stripe-login" action="../php/auth/email/sendResetCode.php" method="POST">
+                            <form id="stripe-login" action="src/php/auth/email/sendResetCode.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>

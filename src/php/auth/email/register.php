@@ -9,7 +9,7 @@ $attrPassword = "password";
 $attrConfirmPassword = "confirmPassword";
 $attrPoliticAccept = "politicAccept";
 function redirect(){
-    header("location: ../../../html/reg_warning.php");
+    header("location: ../../../../reg_warning.php");
     die();
 }
 $_SESSION["lastUrl"] = "register.php";
@@ -173,7 +173,7 @@ try{
     }
     $connUsers->commit();
     $_SESSION["regSuccess"] = true;
-    header("location: ../../../html/registration_sucsess.php");
+    header("location: ../../../../registration_success.php");
     die();
 } catch (Exception $e) {
     $connUsers->rollBack();

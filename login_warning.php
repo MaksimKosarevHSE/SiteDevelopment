@@ -53,7 +53,7 @@ unset($_SESSION["validationLogin"]);
                                     <div class="grid--50-50">
                                         <label for="password">Пароль</label>
                                         <div class="reset-pass">
-                                            <a href="#">Забыли пароль?</a>
+                                            <a href="forget_password.php">Забыли пароль?</a>
                                           </div>
                                     </div>
                                     

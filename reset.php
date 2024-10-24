@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../php/auth/getUserByToken.php";
+include_once "src/php/auth/getUserByToken.php";
 closeAccessForAuthPages();
 
 if (empty($_GET["code"])){
@@ -13,7 +13,7 @@ if (empty($_GET["code"])){
 <head>
     <meta charset="utf-8">
     <title>Изменение пароля</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
     <!--Подключение капчи-->
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
@@ -29,10 +29,10 @@ if (empty($_GET["code"])){
                     <div class="formbg">
                         
                         <div class="formbg-inner padding-horizontal--48">
-                            <img src="../img/reset.webp" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
+                            <img src="src/resources/img/reset.webp" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
                             <span class="padding-bottom--15">Придумайте и введите новый пароль</span>
-                            <form id="stripe-login" action="../php/auth/email/resetPassword.php<?php
+                            <form id="stripe-login" action="src/php/auth/email/resetPassword.php<?php
                             if (!empty($_GET["code"])){
                                 echo "?code=".$_GET["code"];
                             }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../php/auth/getUserByToken.php";
+include_once "src/php/auth/getUserByToken.php";
 closeAccessForAuthPages();
 if (!empty($_SESSION["regSuccess"]) && $_SESSION["regSuccess"] == true) {
     unset($_SESSION['values']);
@@ -15,7 +15,7 @@ if (!empty($_SESSION["regSuccess"]) && $_SESSION["regSuccess"] == true) {
 <head>
     <meta charset="utf-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@ if (!empty($_SESSION["regSuccess"]) && $_SESSION["regSuccess"] == true) {
                     <div class="formbg">
                         
                         <div class="formbg-inner padding-horizontal--48">
-                            <img src="../img/fon.png" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
+                            <img src="src/resources/img/fon.png" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
                             <span class="padding-bottom--15" style="text-align: center; font-size: 2rem; ">Успешно</span>
                             <div class="warning" style="background: rgba(47, 255, 61, 0.5);"><p style="margin-left: 1rem; ">Вы успешно зарегистрировались. Можете войти в свой аккаунт</p></div>
