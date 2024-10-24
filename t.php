@@ -29,36 +29,36 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
     for ($i = 22; $i < 30; $i++) {
         $ceil = $table[$i][$a];
-        $arr["tue"]["knt{$group}"][] = $ceil;
+        $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
     }
 
     for ($i = 33; $i < 41; $i++) {
         $ceil = $table[$i][$a];
-        $arr["wen"]["knt{$group}"][] = $ceil;
+        $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
     }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
     for ($i = 55; $i < 62; $i++) {
         $ceil = $table[$i][$a];
-        $arr["fri"]["knt{$group}"][] = $ceil;
+        $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
     }
 
     for ($i = 66; $i < 73; $i++) {
         $ceil = $table[$i][$a];
-        $arr["sut"]["knt{$group}"][] = $ceil;
+        $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
     }
 
@@ -74,33 +74,33 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
         for ($i = 11; $i < 17; $i++) {
 
             $ceil = $table[$i][$a];
-            $arr["mon"]["knt{$group}"]["lessons"][] = $ceil;
+            $arr["mon"]["knt{$group}"]["lessons"]["lessons"][] = $ceil;
             $arr["mon"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
 
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
 
@@ -111,13 +111,13 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -138,13 +138,13 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -152,22 +152,22 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
         $arr["thur"]["knt{$group}"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -188,36 +188,36 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -238,36 +238,36 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -287,36 +287,36 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -336,21 +336,21 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
@@ -359,13 +359,13 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -385,36 +385,36 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
@@ -435,43 +435,50 @@ if ( $xlsx = SimpleXLSX::parse('file.xlsx') ) {
 
         for ($i = 22; $i < 30; $i++) {
             $ceil = $table[$i][$a];
-            $arr["tue"]["knt{$group}"][] = $ceil;
+            $arr["tue"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["tue"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 33; $i < 41; $i++) {
             $ceil = $table[$i][$a];
-            $arr["wen"]["knt{$group}"][] = $ceil;
+            $arr["wen"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["wen"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         $ceil = $table[44][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
         $ceil = $table[50][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[50][$a + 1];
 
         $ceil = $table[51][$a];
-        $arr["thur"]["knt{$group}"][] = $ceil;
+        $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
         $arr["thur"]["knt{$group}"]["audit"][] = $table[51][$a + 1];
 
         for ($i = 55; $i < 62; $i++) {
             $ceil = $table[$i][$a];
-            $arr["fri"]["knt{$group}"][] = $ceil;
+            $arr["fri"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["fri"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
         for ($i = 66; $i < 73; $i++) {
             $ceil = $table[$i][$a];
-            $arr["sut"]["knt{$group}"][] = $ceil;
+            $arr["sut"]["knt{$group}"]["lessons"][] = $ceil;
             $arr["sut"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
         }
 
 
     }
+    $a =  json_encode($arr);
+    echo "
+    <script>
+    
+        mas = $a;
+        console.log(mas);
+    </script>
+    ";
 
-    print_r($arr["thur"]["knt8"]);
 
 } else {
     echo SimpleXLSX::parseError();
