@@ -1,61 +1,72 @@
 <?php
 session_start();
-include_once "src/php/auth/getUserByToken.php";
+include_once "../php/auth/getUserByToken.php";
 closeAccessForAuthPages();
 ?>
-<!DOCTYPE html>
-<html lang="ru">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Подключение сервисов капчи капчи:-->
+    <meta charset="utf-8">
+    <title>Вход</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!--Подключение капчи-->
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <title>хз</title>
 </head>
+
 <body>
+    <div class="login-root">
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+            <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+                    <h1><a href="" rel="dofollow">Вход</a></h1>
+                </div>
+                <div class="formbg-outer">
+                    <div class="formbg">
+                        
+                        <div class="formbg-inner padding-horizontal--48">
+                            <img src="../img/login_meme.jpg" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
+                            <br>
+                            <span class="padding-bottom--15">Введите данные</span>
+                            <form id="stripe-login" action="../php/auth/email/login.php" method="POST">
+                                <div class="field padding-bottom--24">
+                                    <div class="grid--50-50">
+                                        <label for="password">Почта</label>
+                                    </div>
+                                    <input type="email" name="email">
+                                </div>
+                                <div class="field padding-bottom--24">
+                                    <div class="grid--50-50">
+                                        <label for="password">Пароль</label>
+                                        <div class="reset-pass">
+                                            <a href="forget_password.php">Забыли пароль?</a>
+                                          </div>
+                                    </div>
+                                    
+                                    <input type="password" name="password">
+                                </div>
+                                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+                                    <label for="checkbox">
+                                        <input type="checkbox" name="checkbox"> Запомнить меня
+                                    </label>
+                                </div>
+                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
+                                <div class="field padding-bottom--24">
+                                    <input type="submit" name="submit" value="Войти">
+                                </div>
+                                <div class="field">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="footer-link padding-top--24">
+                        <span> Вас ещё нет в системе? <a href="registration.php">Зарегистрироваться</a></span>
+                        <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
-<form action="src/php/auth/email/login.php" method="POST">
-    <input type="text" name="email" placeholder="@edu.hse.ru">
-    <input type="password" name="password" placeholder="Параоль">
-    <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
-    <input type="submit" value="Войти">
-</form>
-<?php
-    if(!empty($_SESSION["regSuccess"]) && $_SESSION["regSuccess"] == true){
-        echo "Перейдите по ссылке из письма, чтобы активировать аккаунт";
-        unset($_SESSION["captcha"]);
-        unset($_SESSION["validation"]);
-        unset($_SESSION["regSuccess"]);
-        unset($_SESSION["regError"]);
-        unset($_SESSION["lastUrl"]);
-        unset($_SESSION["values"]);
-    }
-    if(!empty($_SESSION["confirmed_email"])){
-        if($_SESSION["confirmed_email"] == true){
-            echo "email успешно подтвержден!";
-        } else {
-            echo "Ошибка подтврерждения email";
-        }
-        unset($_SESSION["confirmed_email"]);
-    }
-
-    if(!empty($_SESSION["validationLogin"])){
-        $result = [];
-        $flag = true;
-        foreach($_SESSION["validationLogin"] as $value){
-            if ($value == 0){
-                $flag = false;
-            }
-        }
-        if($flag){
-            $result["auth"] = $_SESSION["auth"];
-        } else {
-            $result["validationLogin"] = $_SESSION["validationLogin"];
-        }
-        print_r($result);
-        unset($_SESSION["validationLogin"]);
-        unset($_SESSION["auth"]);
-    }
-
-?>
 </html>

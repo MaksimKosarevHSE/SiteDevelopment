@@ -1,6 +1,3 @@
-<?php
-    header("location: src/html/index.php");
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,8 +6,8 @@
     <title>Главная</title>
 </head>
 <body>
-<a href="home.php">home</a>
-<a href="reg.php">register</a>
+<a href="main.php">main</a>
+<a href="registration.php">register</a>
 <a href="login.php">login</a>
 </html>
 
