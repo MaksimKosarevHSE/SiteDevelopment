@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" href="../css/fonts/Georgia/stylesheet.css" />
-	<link rel="stylesheet" href="../css/fonts/Lato/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/resources/fonts/Georgia/stylesheet.css" />
+	<link rel="stylesheet" href="../src/resources/fonts/Lato/stylesheet.css" />
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Важные объявления</title>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo" ><img src="../../img/back_reg.png" alt=""></a>
+<header class="header">
+        <a href="#" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""></a>
         <nav>
-            <a href="../main.html" >Главная</a>
-            <a href="plan.html">Расписание</a>
-            <a href="homework.html">Домашние задания</a>
-            <a href="important.html" class="active">Важные объявления</a>
-            <a href="achievements.html">Полезные материалы</a>
-            <a href="contacts.html">Контакты</a>
+            <a href="../home.php" >Главная</a>
+            <a href="plan.php">Расписание</a>
+            <a href="homework.php" class="active">Домашние задания</a>
+            <a href="important.php">Важные объявления</a>
+            <a href="achievements.php">Полезные материалы</a>
+            <a href="contacts.php">Контакты</a>
         </nav>
     </header>
     
@@ -29,7 +29,7 @@
                     <a class="card__a" href="pages/page1.html">
                         <div class="card__item">
                             <div class="card__cover">
-                                <img src="../../img/card.jpg" class="card__img" alt="">
+                                <img src="../src/resources/img/card.jpg" class="card__img" alt="">
                             </div>
                             <div class="card__info">
                                 <p class="card__nick">
@@ -44,7 +44,7 @@
                 <a class="card__a" href="pages/page2.html">
                     <div class="card__item">
                         <div class="card__cover">
-                            <img src="../../img/diskretnaya.png" class="card__img" alt="">
+                            <img src="../src/resources/img/diskretnaya.png" class="card__img" alt="">
                         </div>
                         <div class="card__info">
                             <p class="card__nick">
@@ -59,7 +59,7 @@
                 <a class="card__a" href="pages/page10.html">
                     <div class="card__item">
                         <div class="card__cover">
-                            <img src="../../img/session.webp" class="card__img" alt="">
+                            <img src="../src/resources/img/session.webp" class="card__img" alt="">
                         </div>
                         <div class="card__info">
                             <p class="card__nick">

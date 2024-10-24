@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" href="../css/fonts/Georgia/stylesheet.css" />
-	<link rel="stylesheet" href="../css/fonts/Lato/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/resources/fonts/Georgia/stylesheet.css" />
+	<link rel="stylesheet" href="../src/resources/fonts/Lato/stylesheet.css" />
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Домашние задания</title>
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo" ><img src="../../img/back_reg.png" alt=""></a>
+        <a href="#" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""></a>
         <nav>
-            <a href="../main.html" >Главная</a>
-            <a href="plan.html">Расписание</a>
-            <a href="homework.html" class="active">Домашние задания</a>
-            <a href="important.html">Важные объявления</a>
-            <a href="achievements.html">Полезные материалы</a>
-            <a href="contacts.html">Контакты</a>
+            <a href="../home.php" >Главная</a>
+            <a href="plan.php">Расписание</a>
+            <a href="homework.php" class="active">Домашние задания</a>
+            <a href="important.php">Важные объявления</a>
+            <a href="achievements.php">Полезные материалы</a>
+            <a href="contacts.php">Контакты</a>
         </nav>
     </header>
     <section class="home">
@@ -41,7 +41,7 @@
                         <p class="card__exit"></p>
                         <h2 class="card__title">Выполнить задания из прикрепленного файла:
                           <br>
-                          <a href="../../files/14-10-2024.pdf" class="hm_file_a"><div class="hm_file_wrapper"><img src="../../img/Educated_Running_Hom.png" alt="" class="hm_file">
+                          <a href="../src/resources/files/14-10-2024.pdf" class="hm_file_a"><div class="hm_file_wrapper"><img src="../../img/Educated_Running_Hom.png" alt="" class="hm_file">
                             <p>14-10-2024</p>
                           </div></a>
                           </h2>

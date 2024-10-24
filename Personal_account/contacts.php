@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" href="../css/fonts/Georgia/stylesheet.css" />
-	<link rel="stylesheet" href="../css/fonts/Lato/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/resources/fonts/Georgia/stylesheet.css" />
+	<link rel="stylesheet" href="../src/resources/fonts/Lato/stylesheet.css" />
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Контакты</title>
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo" ><img src="../../img/back_reg.png" alt=""></a>
+        <a href="#" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""></a>
         <nav>
-            <a href="../main.html" >Главная</a>
-            <a href="plan.html">Расписание</a>
-            <a href="homework.html">Домашние задания</a>
-            <a href="important.html">Важные объявления</a>
-            <a href="achievements.html">Полезные материалы</a>
-            <a href="contacts.html" class="active">Контакты</a>
+            <a href="../home.php" >Главная</a>
+            <a href="plan.php">Расписание</a>
+            <a href="homework.php">Домашние задания</a>
+            <a href="important.php">Важные объявления</a>
+            <a href="achievements.php">Полезные материалы</a>
+            <a href="contacts.php" class="active">Контакты</a>
         </nav>
     </header>
     <div class="flex items-center justify-center min-h-screen bg-white py-48">
@@ -41,7 +41,7 @@
                             <div class="flex flex-col">
                                 <a href="#" class="mx-auto">
                                     <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="../../img/thanks.png">
+                                        src="../src/resources/img/thanks.png">
                                 </a>
                                 <div class="text-center mt-6">
                                     <h1 class="text-gray-900 text-xl font-bold mb-1">
@@ -58,7 +58,7 @@
                             <div class="flex flex-col">
                                 <a href="#" class="mx-auto">
                                     <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="../../img/thanks.png">
+                                        src="../src/resources/img/thanks.png">
                                 </a>
                                 <div class="text-center mt-6">
                                     <h1 class="text-gray-900 text-xl font-bold mb-1">
@@ -75,7 +75,7 @@
                             <div class="flex flex-col">
                                 <a href="#" class="mx-auto">
                                     <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="../../img/thanks.png">
+                                        src="../src/resources/img/thanks.png">
                                 </a>
                                 <div class="text-center mt-6">
                                     <h1 class="text-gray-900 text-xl font-bold mb-1">
