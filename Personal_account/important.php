@@ -79,8 +79,8 @@
     </div>
     <script src="../src/js/preloader.js"></script>
     <script>setTimeout(function(){
-        $('.loader_bg').fadeToggle();
-    }, 1500);
+            $('.loader_bg').fadeToggle();
+        }, 1500);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>

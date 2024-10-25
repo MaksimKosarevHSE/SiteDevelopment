@@ -65,7 +65,7 @@ body{
     height: 150px;
     position: absolute;
     top: calc(50vh - 75px);
-    left: calc(50vw - 100px);
+    left: calc(50vw - 80px);
 }
 .loader:before, .loader:after{
     content: '';
@@ -99,8 +99,8 @@ body{
 .loader__span {
     color: rgba(247, 244, 242, 1);
     position: absolute;
-    top: calc(80vh - 75px);
-    left: calc(50vw - 100px);
+    top: calc(80vh - 110px);
+    left: calc(50vw - 90px);
     font-size: 24px;
 }
 
@@ -360,7 +360,7 @@ span{
 }
 
 .title {
-    margin-top: 3rem;
+    padding-top: 3rem;
     color: #fff;
     font-size: 4rem;
     font-weight: 700;
@@ -391,8 +391,8 @@ span{
 .containera {
     max-width: 1197px;
     margin: 0 auto;
-    margin-top: 5rem;
-    padding-top: 30px;
+    padding-top: 5rem;
+    /*padding-top: 30px;*/
     padding-left: 5px;
     padding-right: 5px;
     color: #fff;
