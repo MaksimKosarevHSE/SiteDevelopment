@@ -15,6 +15,10 @@ $user = getUserByTokenOrRedirect();
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Личный кабинет</title>
 </head>
 <body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+        <span class="loader__span">Загрузка данных...</span>
+    </div>
     <header class="header">
         <a href="#" class="logo" ><img src="src/resources/img/back_reg.png" alt=""></a>
         <nav>
@@ -22,7 +26,7 @@ $user = getUserByTokenOrRedirect();
             <a href="Personal_account/plan.php">Расписание</a>
             <a href="Personal_account/homework.php">Домашние задания</a>
             <a href="Personal_account/important.php">Важные объявления</a>
-            <a href="Personal_account/achievements.php">Достижения</a>
+            <a href="Personal_account/achievements.php">Полезные материалы</a>
             <a href="Personal_account/contacts.php">Контакты</a>
         </nav>
     </header>
@@ -40,10 +44,16 @@ $user = getUserByTokenOrRedirect();
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-telegram"></i></a>
                 <a href="#"><i class="fa-brands fa-vk"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
             <a href="Personal_account/serves.php" class="btn">Перейти к сервисам</a>
         </div>
     </section>
+    <script src="src/js/preloader.js"></script>
+    <script>setTimeout(function(){
+        $('.loader_bg').fadeToggle();
+    }, 1500);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>

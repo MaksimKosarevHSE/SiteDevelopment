@@ -41,7 +41,7 @@
                         <p class="card__exit"></p>
                         <h2 class="card__title">Выполнить задания из прикрепленного файла:
                           <br>
-                          <a href="../src/resources/files/14-10-2024.pdf" class="hm_file_a"><div class="hm_file_wrapper"><img src="../../img/Educated_Running_Hom.png" alt="" class="hm_file">
+                          <a href="../src/resources/files/14-10-2024.pdf" class="hm_file_a"><div class="hm_file_wrapper"><img src="../src/resources/img/Educated_Running_Hom.png" alt="" class="hm_file">
                             <p>14-10-2024</p>
                           </div></a>
                           </h2>

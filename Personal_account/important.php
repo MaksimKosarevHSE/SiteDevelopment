@@ -15,8 +15,8 @@
         <nav>
             <a href="../home.php" >Главная</a>
             <a href="plan.php">Расписание</a>
-            <a href="homework.php" class="active">Домашние задания</a>
-            <a href="important.php">Важные объявления</a>
+            <a href="homework.php">Домашние задания</a>
+            <a href="important.php" class="active">Важные объявления</a>
             <a href="achievements.php">Полезные материалы</a>
             <a href="contacts.php">Контакты</a>
         </nav>
