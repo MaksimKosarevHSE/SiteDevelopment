@@ -10,6 +10,10 @@
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Домашние задания</title>
 </head>
 <body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+        <span class="loader__span">Загрузка данных...</span>
+    </div>
     <header class="header">
         <a href="#" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""></a>
         <nav>
@@ -98,7 +102,12 @@
             </div>
         </div>
     </section>
-    
+    <script src="../src/js/preloader.js"></script>
+    <script>setTimeout(function(){
+        $('.loader_bg').fadeToggle();
+    }, 1500);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 
 </html>
