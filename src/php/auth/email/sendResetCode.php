@@ -7,7 +7,7 @@ function redirect(){
 }
 if($_SERVER["REQUEST_METHOD"] != "POST"){die();}
 
-const CAPTCHA_KEY = '6Ld16FEqAAAAAI0Ag1r-dIExGXNc5y4ZWSL4FN-k';
+const CAPTCHA_KEY = '6LekM2wqAAAAAOcq_kgcsvOjz64EOgesDjwrk-X2';
 $accepted = false;
 if (!empty($_POST['g-recaptcha-response'])) {
     $out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . CAPTCHA_KEY . '&response=' . $_POST['g-recaptcha-response']);
@@ -63,7 +63,7 @@ try{
     if($rowsCount == 0){throw new Exception("Ошибка добавления кода");}
 
 
-    $href = "https://24knt9develop.ru/reset.php?code=$hash_code";
+    $href = "https://hsehelpers.ru/reset.php?code=$hash_code";
 
 
     if(!sendResetCode(trim($_POST["email"]), "Пользователь", $href)){

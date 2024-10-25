@@ -1,7 +1,7 @@
 <?php
-const HOST = "server190.hosting.reg.ru";
-const USER_NAME = "u2837693_default";
-const PASSWORD = "IC8r6QJBJk5o2vaE";
+const HOST = "server128.hosting.reg.ru";
+const USER_NAME = "u2876006_default";
+const PASSWORD = "WlZt6d26iEuUb7MF";
 
 function getServerConnection() : PDO{
     try{
@@ -14,7 +14,7 @@ function getServerConnection() : PDO{
 
 function getDbConnectionUsers() : PDO{
     try{
-        $conn = new PDO("mysql:host=" . HOST . ";charset=utf8;  dbname=u2837693_Users", USER_NAME, PASSWORD);
+        $conn = new PDO("mysql:host=" . HOST . ";charset=utf8;  dbname=u2876006_default", USER_NAME, PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch(PDOException $e){

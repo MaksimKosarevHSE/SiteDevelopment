@@ -55,7 +55,7 @@ unset($_SESSION["errStatus"]);
                                     
                                     <input type="password" name="confirmPassword">
                                 </div>
-                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
+                                <div class="g-recaptcha" data-sitekey="6LekM2wqAAAAAE7ZNWCZaCeIFb_ZgkuoM9R7r-IE"></div>
                                 <div class="field padding-bottom--24">
                                     <input type="submit" name="submit" value="Изменить">
                                 </div>

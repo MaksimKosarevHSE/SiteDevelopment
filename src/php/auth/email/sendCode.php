@@ -15,7 +15,7 @@ function sendCode($email, $name, $href) : bool{
         $mail->Port = 465;
         $mail->Username = 'hsehelper24@mail.ru';
         $mail->Password = 'UYfyksB720r4BpHnbwuG';
-        $mail->setFrom('hsehelper24@mail.ru', '24knt9develop.ru');
+        $mail->setFrom('hsehelper24@mail.ru', 'hsehelpers.ru');
         $mail->addAddress($email, $name);
         $mail->Subject = "Активация аккаунта";
         $body = " <p>Перейдите по ссылке, чтобы завершить регистрацию</p>
@@ -34,7 +34,7 @@ function sendResetCode($email, $name, $href) : bool{
     $mail->Port = 465;
     $mail->Username = 'hsehelper24@mail.ru';
     $mail->Password = 'UYfyksB720r4BpHnbwuG';
-    $mail->setFrom('hsehelper24@mail.ru', '24knt9develop.ru');
+    $mail->setFrom('hsehelper24@mail.ru', 'hsehelpers.ru');
     $mail->addAddress($email, $name);
     $mail->Subject = "Смена пароля";
     $body = " <p>Перейдите по ссылке, чтобы сменить пароль</p>

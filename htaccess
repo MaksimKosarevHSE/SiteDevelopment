@@ -5,7 +5,7 @@ RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 # Конец редиректа
 
 AddHandler fcgid-script .php .phtml .html .htm
-FCGIWrapper /var/www/php-bin/u2837693/24knt9develop.ru/php .php
-FCGIWrapper /var/www/php-bin/u2837693/24knt9develop.ru/php .phtml
-FCGIWrapper /var/www/php-bin/u2837693/24knt9develop.ru/php .html
-FCGIWrapper /var/www/php-bin/u2837693/24knt9develop.ru/php .htm
+FCGIWrapper /var/www/php-bin/u2876006/hsehelpers.ru/php .php
+FCGIWrapper /var/www/php-bin/u2876006/hsehelpers.ru/php .phtml
+FCGIWrapper /var/www/php-bin/u2876006/hsehelpers.ru/php .html
+FCGIWrapper /var/www/php-bin/u2876006/hsehelpers.ru/php .htm

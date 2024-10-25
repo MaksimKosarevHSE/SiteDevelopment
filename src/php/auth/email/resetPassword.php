@@ -10,7 +10,7 @@ if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
 
     $_SESSION["errStatus"] = "";
 
-    $CAPTCHA_KEY = '6Ld16FEqAAAAAI0Ag1r-dIExGXNc5y4ZWSL4FN-k';
+    $CAPTCHA_KEY = '6LekM2wqAAAAAOcq_kgcsvOjz64EOgesDjwrk-X2';
     $accepted = false;
     if (!empty($_POST['g-recaptcha-response'])) {
         $out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $CAPTCHA_KEY . '&response=' . $_POST['g-recaptcha-response']);

@@ -19,10 +19,10 @@ function getUserByToken() : ?User{
             $user = new User($row["user_id"], $row["email"], $row["first_name"], $row["last_name"], $row["third_name"], $row["confirmed_email"], $row["avatar"], $row["position_id"]);
             return $user;
         } catch (Exception $e) {
-            setcookie("token", "", time()-3600, "/", "24knt9develop.ru", false, true);
+            setcookie("token", "", time()-3600, "/", "hsehelpers.ru", false, true);
         }
     }
-    setcookie("token", "", time()-3600, "/", "24knt9develop.ru", false, true);
+    setcookie("token", "", time()-3600, "/", "hsehelpers.ru", false, true);
     return null;
 }
 

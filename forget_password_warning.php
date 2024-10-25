@@ -51,7 +51,7 @@ unset($_SESSION["email"]);
                                     </div>
                                     <input type="email" name="email" value = "<?php echo $email?>">
                                 </div>
-                                <div class="g-recaptcha" data-sitekey="6Ld16FEqAAAAAMNbQ-nmib4sw9wvM1OeCJvOunFv"></div>
+                                <div class="g-recaptcha" data-sitekey="6LekM2wqAAAAAE7ZNWCZaCeIFb_ZgkuoM9R7r-IE"></div>
                                 <div class="field padding-bottom--24">
                                     <input type="submit" name="submit" value="Отправить">
                                 </div>

@@ -20,7 +20,7 @@ $_SESSION["values"] = [
     $attrEmail => $_POST["email"] ?? ""
 ];
 
-const CAPTCHA_KEY = '6Ld16FEqAAAAAI0Ag1r-dIExGXNc5y4ZWSL4FN-k';
+const CAPTCHA_KEY = '6LekM2wqAAAAAOcq_kgcsvOjz64EOgesDjwrk-X2';
 $accepted = false;
 if (!empty($_POST['g-recaptcha-response'])) {
     $out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . CAPTCHA_KEY . '&response=' . $_POST['g-recaptcha-response']);
@@ -165,7 +165,7 @@ try{
     if($rowsCount == 0){throw new Exception("Ошибка добавления кода");}
 
 
-    $href = "https://24knt9develop.ru/src/php/auth/email/confirm_email.php/?code=$confirmEmailHash";
+    $href = "https://hsehelpers.ru/src/php/auth/email/confirm_email.php/?code=$confirmEmailHash";
 
 
     if(!sendCode(trim($_POST[$attrEmail]), trim($_POST[$attrFirstName]), $href)){

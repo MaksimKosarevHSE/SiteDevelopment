@@ -11,7 +11,7 @@ $_SESSION["validationLogin"] = [];
 $attrEmail = "email";
 $attrPassword = "password";
 
-const CAPTCHA_KEY = '6Ld16FEqAAAAAI0Ag1r-dIExGXNc5y4ZWSL4FN-k';
+const CAPTCHA_KEY = '6LekM2wqAAAAAOcq_kgcsvOjz64EOgesDjwrk-X2';
 $accepted = false;
 if (!empty($_POST['g-recaptcha-response'])) {
     $out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . CAPTCHA_KEY . '&response=' . $_POST['g-recaptcha-response']);
@@ -77,7 +77,7 @@ try{
         $stmt->bindValue(":browser", $_SERVER["HTTP_USER_AGENT"]);
         $rowsCount = $stmt->execute();
 
-        $bool = setcookie("token", $token, time() +  31536000, "/", "24knt9develop.ru", false, true);
+        $bool = setcookie("token", $token, time() +  31536000, "/", "hsehelpers.ru", false, true);
         if(!$bool){
             throw new Exception("Ошибка сервера");
         }
