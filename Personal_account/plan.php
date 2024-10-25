@@ -17,6 +17,11 @@ $plan = json_decode(getPlan());
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Расписание</title>
 </head>
 <body>
+<style>
+    tbody{
+        white-space: normal;
+    }
+</style>
     <div class="loader_bg">
         <div class="loader"></div>
         <span class="loader__span">Загрузка данных...</span>
@@ -46,13 +51,10 @@ $plan = json_decode(getPlan());
                                 <tr>
                                     <th>Время занятий</th>
                                     <th>Название предмета</th>
+                                    <th>Кабинет</th>
                                 </tr>
                                 </thead>
                                 <tbody id="mon">
-                                <tr>
-                                    <td>9:30-10:50</td>
-                                    <td>Математический анализ</td>
-                                </tr>
 
                                 </tbody>
                             </table>
@@ -71,21 +73,11 @@ $plan = json_decode(getPlan());
                                     <tr>
                                         <th>Время занятий</th>
                                         <th>Название предмета</th>
+                                        <th>Кабинет</th>
                                     </tr>
                                     </thead>
                                     <tbody id="tue">
-                                    <tr>
-                                        <td>9:30-10:50</td>
-                                        <td>Математический анализ</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11:10-12:30</td>
-                                        <td>Дискретная математика</td>
-                                    </tr>
-                                    <tr>
-                                        <td>13:00-14:20</td>
-                                        <td>Линейная алгебра и геометрия</td>
-                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -103,21 +95,11 @@ $plan = json_decode(getPlan());
                                         <tr>
                                             <th>Время занятий</th>
                                             <th>Название предмета</th>
+                                            <th>Кабинет</th>
                                         </tr>
                                         </thead>
-                                        <tbody id="third">
-                                        <tr>
-                                            <td>9:30-10:50</td>
-                                            <td>Математический анализ</td>
-                                        </tr>
-                                        <tr>
-                                            <td>11:10-12:30</td>
-                                            <td>Дискретная математика</td>
-                                        </tr>
-                                        <tr>
-                                            <td>13:00-14:20</td>
-                                            <td>Линейная алгебра и геометрия</td>
-                                        </tr>
+                                        <tbody id="wen">
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -135,21 +117,11 @@ $plan = json_decode(getPlan());
                                             <tr>
                                                 <th>Время занятий</th>
                                                 <th>Название предмета</th>
+                                                <th>Кабинет</th>
                                             </tr>
                                             </thead>
                                             <tbody id="thur">
-                                            <tr>
-                                                <td>9:30-10:50</td>
-                                                <td>Математический анализ</td>
-                                            </tr>
-                                            <tr>
-                                                <td>11:10-12:30</td>
-                                                <td>Дискретная математика</td>
-                                            </tr>
-                                            <tr>
-                                                <td>13:00-14:20</td>
-                                                <td>Линейная алгебра и геометрия</td>
-                                            </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -166,21 +138,11 @@ $plan = json_decode(getPlan());
                                                 <tr>
                                                     <th>Время занятий</th>
                                                     <th>Название предмета</th>
+                                                    <th>Кабинет</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody id="fri">
-                                                <tr>
-                                                    <td>9:30-10:50</td>
-                                                    <td>Математический анализ</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>11:10-12:30</td>
-                                                    <td>Дискретная математика</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>13:00-14:20</td>
-                                                    <td>Линейная алгебра и геометрия</td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -196,39 +158,147 @@ $plan = json_decode(getPlan());
                                                     <tr>
                                                         <th>Время занятий</th>
                                                         <th>Название предмета</th>
+                                                        <th>Кабинет</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="sut">
-                                                    <tr>
-                                                        <td>9:30-10:50</td>
-                                                        <td>Математический анализ</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>11:10-12:30</td>
-                                                        <td>Дискретная математика</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>13:00-14:20</td>
-                                                        <td>Линейная алгебра и геометрия</td>
-                                                    </tr>
+
                                                     </tbody>
                                                 </table>
                                             </div>
 
 
                                         </div>
-                                        <div id="d123"></div>
     </section>
-<script>
-    $(function(){
-        group = "knt9";
-        if (planFromServer.length != 0){
-            localPlan = planFromServer["mon"]["knt9"];
-            console.log(localPlan);
-        }
-        $("#d123").append();
-    });
-</script>
+    <script>
+        $(function(){
+            console.log(planFromServer)
+            time = {
+                1 : "08:00 - 09:20",
+                2 : "09:30 - 10:50",
+                3 : "11:10 - 12:30",
+                4 : "13:00 - 14:20",
+                5 : "14:40 - 16:00",
+                6 : "16:20 - 17:40",
+                7 : "18:10 - 19:30",
+                8 : "19:40 - 21:00"
+            }
+            group = "knt9";
+            if (planFromServer.length !== 0){
+                {
+                    pl = planFromServer["mon"][group];
+                    for (i = 0; i < pl.lessons.length; i++) {
+                        if (pl.lessons[i] !== "") {
+                            html = `
+                     <tr>
+                        <td>${time[i + 1]}</td>
+                        <td>${pl.lessons[i]}</td>
+                        <td>${pl.audit[i]}</td>
+                    </tr>
+                    `;
+                            $("#mon").append(html);
+
+
+                        }
+                    }
+                }
+
+
+
+                {
+                    pl = planFromServer["tue"][group];
+                    for (i = 0; i < pl.lessons.length; i++) {
+                        if (pl.lessons[i] !== "") {
+                            html = `
+                     <tr>
+                        <td>${time[i + 1]}</td>
+                        <td>${pl.lessons[i]}</td>
+                        <td>${pl.audit[i]}</td>
+                    </tr>
+                    `;
+                            $("#tue").append(html);
+
+
+                        }
+                    }
+                }
+
+
+                {
+                    pl = planFromServer["wen"][group];
+                    for (i = 0; i < pl.lessons.length; i++) {
+                        if (pl.lessons[i] !== "") {
+                            html = `
+                     <tr>
+                        <td>${time[i + 1]}</td>
+                        <td>${pl.lessons[i]}</td>
+                        <td>${pl.audit[i]}</td>
+                    </tr>
+                    `;
+                            $("#wen").append(html);
+
+
+                        }
+                    }
+                }
+
+
+                {
+                    pl = planFromServer["thur"][group];
+                    for (i = 0; i < pl.lessons.length; i++) {
+                        if (pl.lessons[i] !== "") {
+                            html = `
+                     <tr>
+                        <td>${time[i + 1]}</td>
+                        <td>${pl.lessons[i]}</td>
+                        <td>${pl.audit[i]}</td>
+                    </tr>
+                    `;
+                            $("#thur").append(html);
+
+
+                        }
+                    }
+                }
+
+                {
+                    pl = planFromServer["fri"][group];
+                    for (i = 0; i < pl.lessons.length; i++) {
+                        if (pl.lessons[i] !== "") {
+                            html = `
+                     <tr>
+                        <td>${time[i + 1]}</td>
+                        <td>${pl.lessons[i]}</td>
+                        <td>${pl.audit[i]}</td>
+                    </tr>
+                    `;
+                            html2 = html.replaceAll("\n", "<br>");
+                            $("#fri").append(html);
+
+                        }
+                    }
+                }
+
+                {
+                    pl = planFromServer["sut"][group];
+                    for (i = 0; i < pl.lessons.length; i++) {
+                        if (pl.lessons[i] !== "") {
+                            html = `
+                     <tr>
+                        <td>${time[i + 1]}</td>
+                        <td>${pl.lessons[i]}</td>
+                        <td>${pl.audit[i]}</td>
+                    </tr>
+                    `;
+                            $("#sut").append(html);
+                        }
+                    }
+                }
+            }
+
+        });
+
+    </script>
 <script src="../src/js/preloader.js"></script>
     <script>setTimeout(function(){
         $('.loader_bg').fadeToggle();
