@@ -1,3 +1,7 @@
+<?php
+require_once "../src/php/parser/parse.php";
+$plan = json_decode(getPlan());
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,13 @@
     <link rel="stylesheet" type="text/css" href="../src/css/main.css">
     <link rel="stylesheet" href="../src/resources/fonts/Georgia/stylesheet.css" />
 	<link rel="stylesheet" href="../src/resources/fonts/Lato/stylesheet.css" />
+    <script>
+        var planFromServer= <?php print_r(json_encode($plan, JSON_UNESCAPED_UNICODE)) ?>;
+    </script>
     <title>Платформа «Онлайн-помощник студента ВШЭ» | Расписание</title>
 </head>
 <body>
+
     <header class="header">
         <a href="#" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""></a>
         <nav>
@@ -20,11 +28,12 @@
             <a href="achievements.php">Полезные материалы</a>
             <a href="contacts.php">Контакты</a>
         </nav>
-    </header> 
+    </header>
     <section class="home">
         <div class="container">
                 <h2 class="title">Расписание</h2>
-                <p class="desc">Понедельник</p>  
+
+            <p class="desc">Понедельник</p>
                 <p class="desc"></p>  
                 <p class="lyvovka">Львовка</p>       
                 <div class="containert mtb-3">
@@ -100,3 +109,4 @@
     </section>
 </body>
 </html>
+
