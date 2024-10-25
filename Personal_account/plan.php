@@ -40,7 +40,17 @@ $plan = json_decode(getPlan());
     <section class="home">
         <div class="container">
                 <h2 class="title">Расписание</h2>
-
+                <div class="group_select">
+                  <a href="" class="ref_group activeh"><div class="group_number">Группа 1</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 2</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 3</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 4</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 5</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 6</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 7</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 8</div></a>
+                  <a href="" class="ref_group"><div class="group_number">Группа 9</div></a>
+                </div>
             <p class="desc">Понедельник</p>
                     <p class="desc"></p>
                     <p class="lyvovka">Ура, начало учёбы!</p>
