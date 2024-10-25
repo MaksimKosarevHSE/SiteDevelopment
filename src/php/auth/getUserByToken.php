@@ -29,7 +29,7 @@ function getUserByToken() : ?User{
 function getUserByTokenOrRedirect() : User{
     $user = getUserByToken();
     if ($user == null){
-        header("Location: ../../../../login.php");
+        header("Location: ../../../login.php");
     }
     return $user;
 }

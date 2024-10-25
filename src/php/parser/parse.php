@@ -4,6 +4,7 @@ require_once __DIR__ . "/../../../vendor/autoload.php";
 
 use Shuchkin\SimpleXLSX;
 $arr = [];
+$a = [];
 if ( $xlsx = SimpleXLSX::parse('../../resources/php_res/24knt9.xlsx') ) {
     $table = $xlsx->rows();
 
@@ -462,15 +463,6 @@ if ( $xlsx = SimpleXLSX::parse('../../resources/php_res/24knt9.xlsx') ) {
 
     }
     $a =  json_encode($arr);
-    echo "
-    <script>
-    
-        mas = $a;
-        console.log(mas);
-    </script>
-    ";
-
-
 } else {
-    echo SimpleXLSX::parseError();
+    //echo SimpleXLSX::parseError();
 }
