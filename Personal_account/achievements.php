@@ -32,7 +32,7 @@
         <img src="../src/resources/img/66010085.jpg">
         <div class="grid__body">
           <div class="relative">
-            <a class="grid__link" href="../src/resources/files/book_discr.jpg" ></a>
+            <a class="grid__link" href="../src/resources/files/Klushin.pdf" ></a>
             <h1 class="grid__title">Сборник по <br>дискретной математике</h1>
             <p class="grid__author"></p>
             <div class="text"></div>

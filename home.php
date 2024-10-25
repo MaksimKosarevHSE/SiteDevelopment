@@ -46,7 +46,7 @@ $user = getUserByTokenOrRedirect();
                 <a href="#"><i class="fa-brands fa-vk"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <a href="Personal_account/serves.php" class="btn">Перейти к сервисам</a>
+            <a href="Personal_account/plan.php" class="btn">Перейти к сервисам</a>
         </div>
     </section>
     <script src="src/js/preloader.js"></script>
