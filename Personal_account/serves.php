@@ -15,7 +15,7 @@
         <span class="loader__span">Загрузка данных...</span>
     </div>
     <header class="header">
-        <a href="#" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""></a>
+        <a href="#account" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""><p>Имя</p></a>
         <nav>
             <a href="../home.php" >Главная</a>
             <a href="plan.php">Расписание</a>

@@ -1130,3 +1130,46 @@ button.primary.ghost {
     display: flex;
     align-items: center;
 }
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    vertical-align: middle;
+}
+
+
+.logo p {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 2.0rem;
+}
+
+
+.account__img {
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+}
+
+.account__title {
+    color: #1B202B;
+    font-size: 4rem;
+}
+
+.account__text {
+    text-align: center;
+}
+
+.account__text p {
+    text-align: center;
+}
+
+.account__text a{
+    color: #0367cb;
+
+}
+
+.account__content {
+    background: rgb(255, 255, 255, 0.9);
+}
