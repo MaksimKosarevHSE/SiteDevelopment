@@ -96,6 +96,7 @@ $user = getUserByTokenOrRedirect();
                 </div>
             </div>
         </div>
+    </div>
     <div id="popup1" class="popup">
         <a href="#header" class="popup__area"></a>
         <div class="popup__body">
