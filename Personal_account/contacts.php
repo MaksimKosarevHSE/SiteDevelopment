@@ -34,7 +34,7 @@ $user = getUserByTokenOrRedirect();
     <p class="desc"></p>
     <div class="aboutUs">
         <div class="card-container">
-            <img class="round" src="../src/resources/img/thanks.png" alt="user" />
+            <img class="round" src="../src/resources/img/IMG_9223.PNG" alt="user" />
             <h3>Антон Никаноров</h3>
             <h6>Студент 24КНТ9 ВШЭ НН</h6>
             <p>Фронт-энд разработчик<br/>дизайнер сайта</p>
@@ -49,7 +49,7 @@ $user = getUserByTokenOrRedirect();
             </div>
         </div>
         <div class="card-container">
-            <img class="round" src="../src/resources/img/thanks.png" alt="user" />
+            <img class="round" src="../src/resources/img/m.jpg" alt="user" />
             <h3>Максим Косарев</h3>
             <h6>Студент 24КНТ9 ВШЭ НН</h6>
             <p>Бэк-энд разработчик<br/>серверная часть сайта</p>
@@ -65,7 +65,7 @@ $user = getUserByTokenOrRedirect();
             </div>
         </div>
         <div class="card-container">
-            <img class="round" src="../src/resources/img/thanks.png" alt="user" />
+            <img class="round" src="../src/resources/img/daniel.jpg" alt="user" />
             <h3>Даниил Бабкин</h3>
             <h6>Студент 24КНТ9 ВШЭ НН</h6>
             <p>Руководитель проекта</p>

@@ -503,10 +503,6 @@ span{
 }
 
 @media (max-width: 1600px) {
-  .cards {
-    justify-content: center;
-  }
-}
 
 .popup {
     position: fixed;
@@ -721,7 +717,8 @@ input[type=file]::file-selector-button {
 	border: 1px solid #0367cb;
 	border-radius: 50%;
 	padding: 7px;
-    width: 80%;
+    width: 30rem;
+    height: 30rem;
 }
 
 button.primary {
@@ -803,9 +800,10 @@ button.primary.ghost {
  }
 
  .cardi {
+    margin: 0 auto;
     display: flex;
     gap: 15px;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding-bottom: 10px;
     
@@ -932,7 +930,6 @@ button.primary.ghost {
 		display: block;
 		width: 100%;
 	}
-
 	.table-2 thead, 
     .table-2 tbody, 
     .table-2 thead th {

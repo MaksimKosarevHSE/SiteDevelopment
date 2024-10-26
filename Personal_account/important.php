@@ -99,14 +99,15 @@ $user = getUserByTokenOrRedirect();
     <div id="popup1" class="popup">
         <a href="#header" class="popup__area"></a>
         <div class="popup__body">
-            <div class="popup__content">
-                <a href="#header" class="popup__close">Х</a>
-                <div class="popup__title"><img class="popup__img" src="../src/resources/img/card.jpg" alt="Slider item" /></div>
-                <div class="popup__title">Выдача стипендии<br></div>
-                <div class="popup__text"><p>На этой неделе состоится выдача стипендиальных карт по расписанию.</p></div>
+                <div class="popup__content">
+                    <a href="#header" class="popup__close">Х</a>
+                    <div class="popup__title"><img class="popup__img" src="../src/resources/img/card.jpg" alt="Slider item" /></div>
+                    <div class="popup__title">Выдача стипендии<br></div>
+                    <div class="popup__text"><p>На этой неделе состоится выдача стипендиальных карт по расписанию.</p></div>
+                </div>
         </div>
     </div>
-    <div id="popup23" class="popup">
+    <div id="popup2" class="popup">
         <a href="#header" class="popup__area"></a>
         <div class="popup__body">
             <div class="popup__content">
@@ -114,6 +115,7 @@ $user = getUserByTokenOrRedirect();
                 <div class="popup__title"><img class="popup__img" src="../src/resources/img/diskretnaya.png" alt="Slider item" /></div>
                 <div class="popup__title">КР Дискретная математика<br></div>
                 <div class="popup__text"><p>В  этот понедельник состоится контрольная по дискретной математике</p></div>
+        </div>
         </div>
     </div>
     <div id="popup3" class="popup">
@@ -124,6 +126,7 @@ $user = getUserByTokenOrRedirect();
                 <div class="popup__title"><img class="popup__img" src="../src/resources/img/session.webp" alt="Slider item" /></div>
                 <div class="popup__title">Расписание сессий<br></div>
                 <div class="popup__text"><p>Вы можете ознакомиться с расписанием сессионной недели</p></div>
+        </div>
         </div>
     </div>
     <footer style="background: rgb(24, 54, 118);">
