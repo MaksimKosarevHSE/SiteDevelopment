@@ -25,6 +25,7 @@
             <a href="contacts.php" class="active">Контакты</a>
         </nav>
     </header>
+    <div class="contant">
     <div class="flex items-center justify-center min-h-screen bg-white py-48">
         <div class="flex flex-col">
             <div class="flex flex-col mt-8">
@@ -95,6 +96,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <script src="../src/js/preloader.js"></script>
     <script>setTimeout(function(){

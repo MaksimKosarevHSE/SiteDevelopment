@@ -14,7 +14,7 @@ closeAccessForAuthPages();
 </head>
 
 <body>
-<div class="loader_bg">
+    <div class="loader_bg">
         <div class="loader"></div>
         <span class="loader__span">Загрузка данных...</span>
     </div>

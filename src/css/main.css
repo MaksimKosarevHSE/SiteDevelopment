@@ -962,3 +962,8 @@ span{
     background: #447dc7;
     transform: scale(1.07);
 }
+
+.contant {
+    display: flex;
+    align-items: center;
+}
