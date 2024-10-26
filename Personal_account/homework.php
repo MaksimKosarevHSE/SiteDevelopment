@@ -90,11 +90,11 @@
                   <a href="#header" class="popup__close">Х</a>
                   <div class="popup__title"><img class="popup__img" src="../src/resources/files/linal.jpg" alt="Slider item" /></div>
                   <div class="popup__title">Линейная алгебра и геометрия<br>Шапошников Владимир Евгеньевич</div>
-                  <div class="popup__text"><p><form id="form">
+                  <div class="popup__text"><p><form id="form" action="../src/php/sendDZ.php" method="POST" enctype="multipart/form-data">
                     <label for="images" class="drop-container" id="dropcontainer">
                       <span class="drop-title">Перетащите файл сюда</span>
                       или
-                      <input type="file" id="images" accept="image/*" required>
+                      <input type="file" id="images" name="linal" accept="pdf/*" required>
                     </label>
                     <button class="popup_btn">Отправить</button>
                   </form></p></div>
