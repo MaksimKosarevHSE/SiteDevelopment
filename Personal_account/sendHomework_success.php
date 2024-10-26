@@ -30,8 +30,8 @@ $user = getUserByTokenOrRedirect();
                         <br>
                         <span class="padding-bottom--15" style="text-align: center; font-size: 2rem; ">Успешно</span>
                         <form id="stripe-login">
-                            <div class="field padding-bottom--24" style="margin-top: 3rem;">
-                                <a href="../home.php"><div class="btn_sucsess"><p style="margin-top: 1.5%;">Вернуться в кабинет</p></div></a>
+                            <div class="field padding-bottom--24" style="margin-top: 3rem; background-color:rgb(0 48 255 / 70%);">
+                                <a href="../home.php"><div class="btn_sucsess"><p style="margin-top: 1.5%; color:#fcfcff">Вернуться в кабинет</p></div></a>
                             </div>
                             <div class="field">
                             </div>
