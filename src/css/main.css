@@ -1290,7 +1290,7 @@ button.primary.ghost {
  @media(max-width: 767px) {
     .mobile-nav-button {
         display: flex;
-        z-index: 1000;
+        z-index: 1001;
     }
 }
 
@@ -1302,18 +1302,17 @@ button.primary.ghost {
 	position: relative;
     top: 0;
     right: 0;
-	z-index: 999;
+	z-index: 1001;
 	width: 40px;
 	height: 30px;
 	justify-content: center;
     display: none;
-    z-index: 1000;
 }
 
 @media (max-width: 767px){
     .mobile-nav-button {
         display: flex;
-        z-index: 1000;
+        z-index: 1001;
     }
 }
 
@@ -1323,7 +1322,7 @@ button.primary.ghost {
 	height: 5px;
 	background: rgba(255, 255, 255, 0.7);
     border-radius: 2px;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .mobile-nav-button__icon::after,

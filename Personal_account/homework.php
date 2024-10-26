@@ -23,9 +23,9 @@ $user = getUserByTokenOrRedirect();
     <a href="#account" class="logo"><img src="src/resources/img/back_reg.png" alt="">
         <p><?php echo $user->getFirstName() ?></p></a>
     <nav>
-        <a href="../home.php" class="active">Главная</a>
+        <a href="../home.php" >Главная</a>
         <a href="plan.php">Расписание</a>
-        <a href="homework.php">Домашние задания</a>
+        <a href="homework.php" class="active">Домашние задания</a>
         <a href="important.php">Важные объявления</a>
         <a href="achievements.php">Полезные материалы</a>
         <a href="contacts.php">Контакты</a>
