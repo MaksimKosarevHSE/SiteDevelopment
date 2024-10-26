@@ -40,7 +40,7 @@ $user = getUserByTokenOrRedirect();
             </a>
         
             <figcaption>
-            <div class="fig-author-figure-title">Борис Игоревич Улитин</div>
+            <div class="fig-author-figure-title">Улитин Борис Игоревич</div>
             <div class="fig-author-figure-desc">Академический руководитель</div>
             <div class="fig-author-figure-desc">e-mail: bulitin@hse.ru</div>
             </figcaption>
@@ -95,7 +95,7 @@ $user = getUserByTokenOrRedirect();
     <p class="desc"></p>
     <div class="aboutUs">
         <div class="card-container">
-            <img class="round" src="../src/resources/img/cold.jpg" alt="user" />
+            <img class="round" src="../src/resources/img/IMG_9223.PNG" alt="user" />
             <h3>Антон Никаноров</h3>
             <h6>Студент 24КНТ9 ВШЭ НН</h6>
             <p>Фронт-энд разработчик<br/>дизайнер сайта</p>
