@@ -25,75 +25,53 @@
             <a href="contacts.php" class="active">Контакты</a>
         </nav>
     </header>
-    <div class="contant">
-    <div class="flex items-center justify-center min-h-screen bg-white py-48">
-        <div class="flex flex-col">
-            <div class="flex flex-col mt-8">
-                <div class="container max-w-7xl px-4">
-                    <div class="flex flex-wrap justify-center text-center mb-24">
-                        <div class="w-full lg:w-6/12 px-4">
-                            <h1 class="text-gray-900 text-4xl font-bold mb-8">
-                                Встречайте команду
-                            </h1>
-                            <p class="text-gray-700 text-lg font-light">
-                                Которая трудилась над этим проектом
-                            </p>
-                        </div>
-                    </div>
-    
-                    <div class="flex flex-wrap">
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="../src/resources/img/thanks.png">
-                                </a>
-                                <div class="text-center mt-6">
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Максим Косарев
-                                    </h1>
-                                    <div class="text-gray-700 font-light mb-2">
-                                        Бэк-энд
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="../src/resources/img/thanks.png">
-                                </a>
-                                <div class="text-center mt-6">
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Никаноров Антон
-                                    </h1>
-                                    <div class="text-gray-700 font-light mb-2">
-                                        Фронт-енд
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="../src/resources/img/thanks.png">
-                                </a>
-                                <div class="text-center mt-6">
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Даниил Бабкин
-                                    </h1>
-                                    <div class="text-gray-700 font-light mb-2">
-                                        Фул-стэк, тимлид
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <h2 class="title">О нас </h2>
+    <p class="desc"></p>
+    <div class="aboutUs">
+        <div class="card-container">
+            <img class="round" src="../src/resources/img/thanks.png" alt="user" />
+            <h3>Антон Никаноров</h3>
+            <h6>Студент 24КНТ9 ВШЭ НН</h6>
+            <p>Фронт-энд разработчик<br/>дизайнер сайта</p>
+            <div class="skills">
+                <h6>Навыки</h6>
+                <ul>
+                    <li>UI / UX</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-container">
+            <img class="round" src="../src/resources/img/thanks.png" alt="user" />
+            <h3>Максим Косарев</h3>
+            <h6>Студент 24КНТ9 ВШЭ НН</h6>
+            <p>Бэк-энд разработчик<br/>серверная часть сайта</p>
+            <div class="skills">
+                <h6>Навыки</h6>
+                <ul>
+                    <li>PHP</li>
+                    <li>SQL</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-container">
+            <img class="round" src="../src/resources/img/thanks.png" alt="user" />
+            <h3>Даниил Бабкин</h3>
+            <h6>Студент 24КНТ9 ВШЭ НН</h6>
+            <p>Руководитель проекта</p>
+            <div class="skills">
+                <h6>Навыки</h6>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Photoshop</li>
+                    <li>SMM management</li>
+                </ul>
             </div>
         </div>
     </div>

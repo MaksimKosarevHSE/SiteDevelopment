@@ -51,7 +51,7 @@
                           </h2>
                         
                         <p class="card__apply">
-                          <a class="card__link" href="#">Отправить<i class="fas fa-arrow-right"></i></a>
+                          <a class="card__link popup__link" href="#popup6">Отправить<i class="fas fa-arrow-right"></i></a>
                         </p>
                       </div>
                       <div class="card card-3">
@@ -82,6 +82,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="popup6" class="popup">
+          <a href="#header" class="popup__area"></a>
+          <div class="popup__body">
+              <div class="popup__content">
+                  <a href="#header" class="popup__close">Х</a>
+                  <div class="popup__title"><img class="popup__img" src="../src/resources/files/linal.jpg" alt="Slider item" /></div>
+                  <div class="popup__title">Линейная алгебра и геометрия<br>Шапошников Владимир Евгеньевич</div>
+                  <div class="popup__text"><p><form id="form">
+                    <label for="images" class="drop-container" id="dropcontainer">
+                      <span class="drop-title">Перетащите файл сюда</span>
+                      или
+                      <input type="file" id="images" accept="image/*" required>
+                    </label>
+                    <button class="popup_btn">Отправить</button>
+                  </form></p></div>
+          </div>
         </div>
     </section>
     <script src="../src/js/preloader.js"></script>
