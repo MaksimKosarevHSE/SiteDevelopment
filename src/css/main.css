@@ -1205,3 +1205,82 @@ button.primary.ghost {
 }
 
 
+
+.fir-clickcircle {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .fir-image-figure {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    width: 80%;
+    text-decoration: none;
+    background: rgb(255, 255, 255, 0.4);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px solid rgb(17,45,105);
+    transition: 0.5s;
+  }
+
+  .fir-image-figure:hover {
+    transform: scale(1.01);
+  }
+  
+  .fir-image-figure .caption, .fir-image-figure figcaption {
+    padding-left: 15px;
+  }
+  
+  html.wf-active .fir-image-figure .fig-author-figure-title {
+    font-size: 40rem;
+  }
+  
+  .fir-image-figure .fig-author-figure-title {
+    color: var(--fir-color-grey);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    margin-top: 2px;
+  }
+  
+  .fir-imageover {
+    position: relative;
+    display: flex;
+  }
+  
+  .fir-imageover-color {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    background: var(--fir-blue-twitter-alpha);
+    background-image: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+    animation: fadeInFadeOut 2s infinite;
+    top: 0;
+    left: 0;
+  }
+  
+  .fir-imageover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeInFadeOut 2s infinite;
+  }
+  
+.fig-author-figure-desc {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }

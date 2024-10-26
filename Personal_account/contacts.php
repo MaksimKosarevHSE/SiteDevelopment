@@ -30,11 +30,72 @@ $user = getUserByTokenOrRedirect();
             <a href="contacts.php" class="active">Контакты</a>
         </nav>
     </header>
+    <h2 class="title" style="margin-top: 15rem;">Контакты учебного офиса</h2>
+    <p class="desc"></p>
+    <div class="cont">
+        <figure class="fir-image-figure">
+            <a class="fir-imageover" rel="noopener" target="_blank" href="">
+            <img class="fir-author-image fir-clickcircle" src="../src/resources/img/boris.jpg" alt="David East - Author" style="object-fit: cover;">
+            <div class="fir-imageover-color"></div>
+            </a>
+        
+            <figcaption>
+            <div class="fig-author-figure-title">Борис Игоревич Улитин</div>
+            <div class="fig-author-figure-desc">Академический руководитель</div>
+            <div class="fig-author-figure-desc">e-mail: bulitin@hse.ru</div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="cont">
+        <figure class="fir-image-figure">
+            <a class="fir-imageover" rel="noopener" target="_blank" href="">
+            <img class="fir-author-image fir-clickcircle" src="../src/resources/img/avseeva.jpg" alt="David East - Author" style="object-fit: cover;">
+            <div class="fir-imageover-color"></div>
+            </a>
+        
+            <figcaption>
+            <div class="fig-author-figure-title">Асеева Наталья Владимировна</div>
+            <div class="fig-author-figure-desc">Декан факультета ИМиКН</div>
+            <div class="fig-author-figure-desc">e-mail: nvaseeva@hse.ru</div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="cont">
+        <figure class="fir-image-figure">
+            <a class="fir-imageover" rel="noopener" target="_blank" href="">
+            <img class="fir-author-image fir-clickcircle" src="../src/resources/img/emelyanova.png" alt="David East - Author" style="object-fit: cover;">
+            <div class="fir-imageover-color"></div>
+            </a>
+        
+            <figcaption>
+            <div class="fig-author-figure-title">Емельянова Мария Максимовна</div>
+            <div class="fig-author-figure-desc">Начальник
+                отдела сопровождения учебного процесса</div>
+            <div class="fig-author-figure-desc">e-mail: memelyanova@hse.ru</div>
+            <div class="fig-author-figure-desc">тел. 432-00-89</div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="cont">
+        <figure class="fir-image-figure">
+            <a class="fir-imageover" rel="noopener" target="_blank" href="">
+            <img class="fir-author-image fir-clickcircle" src="../src/resources/img/polonec.jpg" alt="David East - Author" style="object-fit: cover;">
+            <div class="fir-imageover-color"></div>
+            </a>
+        
+            <figcaption>
+            <div class="fig-author-figure-title">Полонецкая Наталья Александровна</div>
+            <div class="fig-author-figure-desc">Заместитель начальника</div>
+            <div class="fig-author-figure-desc">e-mail: nbakulina@hse.ru</div>
+            <div class="fig-author-figure-desc">тел. 257-29-36</div>
+            </figcaption>
+        </figure>
+    </div>
     <h2 class="title">О нас </h2>
     <p class="desc"></p>
     <div class="aboutUs">
         <div class="card-container">
-            <img class="round" src="../src/resources/img/IMG_9223.PNG" alt="user" />
+            <img class="round" src="../src/resources/img/cold.jpg" alt="user" />
             <h3>Антон Никаноров</h3>
             <h6>Студент 24КНТ9 ВШЭ НН</h6>
             <p>Фронт-энд разработчик<br/>дизайнер сайта</p>
