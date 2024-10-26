@@ -64,7 +64,7 @@ $user = getUserByTokenOrRedirect();
             <a href="#"><i class="fa-brands fa-vk"></i></a>
             <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </div>
-        <a href="Personal_account/plan.php" class="btn">Перейти к сервисам</a>
+        <a href="Personal_account/plan.php" style="font-weight: 400" class="btn">Перейти к сервисам</a>
     </div>
 
 </section>
