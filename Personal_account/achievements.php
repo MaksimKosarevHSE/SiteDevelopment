@@ -27,7 +27,7 @@ $user = getUserByTokenOrRedirect();
         <a href="plan.php">Расписание</a>
         <a href="homework.php">Домашние задания</a>
         <a href="important.php">Важные объявления</a>
-        <a href="achievements.php">Полезные материалы</a>
+        <a href="achievements.php" class="active">Полезные материалы</a>
         <a href="contacts.php">Контакты</a>
     </nav>
     <div class="l">
