@@ -91,7 +91,7 @@ $user = getUserByTokenOrRedirect();
           <li><a href="communication.html">Связь с нами</a></li>
         </ul>
       </nav>
-    <div id="foot"
+      <div id="foot"
       
       style="display: flex; justify-content: center; flex-direction: row; align-items: center;margin: auto auto;margin-top:70px;margin-bottom:10px">
       
@@ -104,7 +104,7 @@ $user = getUserByTokenOrRedirect();
                 <a href="#" style="color: white;"><i class="fa-brands fa-youtube"></i></a>
 
       </div>
-    </address>
+      </address>
       <a id="politicConf" style="font-size:1.4rem;color:rgb(119, 119, 119); text-decoration: none;"
         href="aboutUs.html">Политика конфиденциальности</a>
         <p id="copyright" style="font-size:1.4rem;color:rgb(119, 119, 119);font-style: normal;">Copyright @ few-types.ru, 2024</p>
