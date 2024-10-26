@@ -20,7 +20,7 @@ $user = getUserByTokenOrRedirect();
         <span class="loader__span">Загрузка данных...</span>
     </div>
     <header class="header">
-    <a href="#account" class="logo"><img src="src/resources/img/back_reg.png" alt="">
+    <a href="#account" class="logo"><img src="../src/resources/img/back_reg.png" alt="">
         <p><?php echo $user->getFirstName() ?></p></a>
     <nav>
         <a href="../home.php" >Главная</a>
@@ -598,6 +598,7 @@ $user = getUserByTokenOrRedirect();
         display: flex !important;
     }
 </style>
+    <script src="../src/js/burger.js"></script>
     <script src="../src/js/preloader.js"></script>
     <script>setTimeout(function(){
             $('.loader_bg').fadeToggle();

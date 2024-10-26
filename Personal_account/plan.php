@@ -34,7 +34,7 @@ $plan = json_decode(getPlan());
     <span class="loader__span">Загрузка данных...</span>
 </div>
 <header class="header">
-    <a href="#account" class="logo"><img src="src/resources/img/back_reg.png" alt="">
+    <a href="#account" class="logo"><img src="../src/resources/img/back_reg.png" alt="">
         <p><?php echo $user->getFirstName() ?></p></a>
     <nav>
         <a href="../home.php">Главная</a>
@@ -800,6 +800,7 @@ $plan = json_decode(getPlan());
     });
 
 </script>
+<script src="../src/js/burger.js"></script>
 <script src="../src/js/preloader.js"></script>
 <script>setTimeout(function(){
         $('.loader_bg').fadeToggle();
