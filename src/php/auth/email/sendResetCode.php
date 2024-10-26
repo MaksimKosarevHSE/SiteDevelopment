@@ -50,7 +50,7 @@ try{
     }
     $row = $stmt->fetch();
     if ($row["confirmed_email"] != 1) {
-        $_SESSION["status"] = "Ваш аккаунт не активирован";
+        $_SESSION["status"] = "Ваш аккаунт не активирован. <a href='../../../../activate_account.php'>Активируйте его</a>";
         throw new Exception("noActivate");
     }
     //

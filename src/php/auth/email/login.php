@@ -62,7 +62,7 @@ try{
         throw new Exception("incorrectPassword");
     }
         if ($row["confirmed_email"] != 1) {
-            $_SESSION["auth"] = "Ваш аккаунт не активирован";
+            $_SESSION["auth"] = "Ваш аккаунт не активирован. <a href='../../../../activate_account.php'>Активируйте его</a>";
             throw new Exception("noActivate");
         }
 

@@ -36,7 +36,7 @@ if (!empty($_SESSION["regSuccess"]) && $_SESSION["regSuccess"] == true) {
                             <img src="src/resources/img/fon.png" alt="" class="reg_img" style="width: 100%; border-radius: 5%; padding-bottom: 5%;">
                             <br>
                             <span class="padding-bottom--15" style="text-align: center; font-size: 2rem; ">Успешно</span>
-                            <div class="warning" style="background: rgba(47, 255, 61, 0.5);"><p style="margin-left: 1rem; ">Вы успешно зарегистрировались. Можете войти в свой аккаунт</p></div>
+                            <div class="warning" style="background: rgba(47, 255, 61, 0.5);"><p style="margin-left: 1rem; ">На вашу почту было отправлено письмо для активации аккаунта. <a href="activate_account.php">Не пришло письмо?</a></p></div>
                             <form id="stripe-login">
                                 <div class="field padding-bottom--24" style="margin-top: 3rem;">
                                     <a href="login.php"><div class="btn_sucsess"><p style="margin-top: 1.5%;">Перейти к входу</p></div></a>

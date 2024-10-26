@@ -48,7 +48,7 @@ unset($_SESSION["email"]);
                             <br>
                             <div class="warning"><p style="margin-left: 1rem;"><?php echo $msg?></p></div>
                             <span class="padding-bottom--15" style="padding-top: 1rem;">Введите вашу почту, мы повторно отправим письмо об активации аккаунта.</span>
-                            <form id="stripe-login" action="src/php/auth/email/sendResetCode.php" method="POST">
+                            <form id="stripe-login" action="src/php/auth/email/sendLink.php" method="POST">
                                 <div class="field padding-bottom--24">
                                     <div class="grid--50-50">
                                         <label for="password">Почта</label>

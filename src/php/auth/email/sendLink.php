@@ -2,7 +2,7 @@
 session_start();
 
 function redirect(){
-    header("location: ../../../../forget_password_warning.php");
+    header("location: ../../../../activate_account_warning.php");
     die();
 }
 if($_SERVER["REQUEST_METHOD"] != "POST"){die();}
