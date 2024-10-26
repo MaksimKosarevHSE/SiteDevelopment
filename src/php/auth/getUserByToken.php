@@ -44,6 +44,6 @@ function getUserByTokenOrRedirect() : User{
 function closeAccessForAuthPages() : void{
     $user = getUserByToken();
     if ($user != null){
-        header("Location: ../../../../index.php");
+        header("Location: ../../../../home.php");
     }
 }

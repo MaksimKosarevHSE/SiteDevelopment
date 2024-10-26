@@ -108,7 +108,8 @@ trait ContainerTrait
 		return $this->hasByIndex($key);
 	}
 
-	/**er	 * Поиск по индексу
+	/**
+	 * Поиск по индексу
 	 *
 	 * @param $index
 	 *
