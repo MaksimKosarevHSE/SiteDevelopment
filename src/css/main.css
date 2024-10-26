@@ -76,11 +76,11 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    animation: loader 2s linear infinite;
+    animation: loader 1.7s linear infinite;
     opacity: 0;
 }
 .loader:before{
-    animation-delay: .5s;
+    animation-delay: .4s;
 }
 @keyframes loader{
     0%{
@@ -270,7 +270,7 @@ span{
     color: rgb(11, 24, 52);
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid rgb(17,45,105);
+    border: 1px solid rgb(17,45,105);
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -378,9 +378,7 @@ span{
 .lyvovka {
     font-size: 1.4rem;
     color: #fff;
-    margin-top: 2rem;
-    text-align: center;
-    background: #fa99b2;
+    margin-top: 2rem;    text-align: center;
     opacity: 0.8;
     width: auto;
     padding: 10px;
@@ -640,6 +638,18 @@ input[type=file]::file-selector-button {
     background: #0d45a5;
     color: rgb(238, 238, 238, 0.8);
     margin: 0 auto;
+    transition: 0.5s;
+  }
+  .popup_btn:hover {
+    border: #0d45a5 1px solid;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: large;
+    display: flex;  
+    background: rgb(238, 238, 238, 0.8);
+    color: #0d45a5;
+    margin: 0 auto;
+    transform: scale(1.05);
   }
   .drop-container:hover {
     background: #eee;
@@ -735,7 +745,8 @@ button.primary.ghost {
 	padding: 15px;
 	margin-top: 30px;
 }
-
+.table-responsive {
+    border-radius: 1rem;}
 .skills ul {
 	list-style-type: none;
 	margin: 0;
@@ -859,7 +870,6 @@ button.primary.ghost {
 .containert{
     width: 100rem;
     margin: auto;
-    padding: 0 15px;
     border-radius: 15px;
 }
 
@@ -881,7 +891,6 @@ button.primary.ghost {
 .table th, .table td{
     text-align: center;
     padding: 15px;
-    
 }
 
 .table th{
@@ -1173,3 +1182,29 @@ button.primary.ghost {
 .account__content {
     background: rgb(255, 255, 255, 0.9);
 }
+
+.p1 {
+    background: #fa99b2;
+}
+
+.p2 {
+    background: #99fab8;
+}
+
+.p3 {
+    background: #99d0fa;
+}
+
+.p4 {
+    background: #fa999f;
+}
+
+.p5 {
+    background: #f7fa99;
+}
+
+.p6 {
+    background: #bb99fa;
+}
+
+

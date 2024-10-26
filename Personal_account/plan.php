@@ -60,7 +60,7 @@ $plan = json_decode(getPlan());
         </div>
         <p class="desc">Понедельник</p>
         <p class="desc"></p>
-        <p class="lyvovka">Ура, начало учёбы!</p>
+        <p class="lyvovka p1">Ура, начало учёбы!</p>
         <div class="containert mtb-3">
             <div class="table-responsive">
                 <table class="table">
@@ -82,7 +82,7 @@ $plan = json_decode(getPlan());
 
             <p class="desc">Вторник</p>
             <p class="desc"></p>
-            <p class="lyvovka">Не унывай!</p>
+            <p class="lyvovka p2">Не унывай!</p>
             <div class="containert mtb-3">
                 <div class="table-responsive">
                     <table class="table">
@@ -104,7 +104,7 @@ $plan = json_decode(getPlan());
 
                 <p class="desc">Среда</p>
                 <p class="desc"></p>
-                <p class="lyvovka">Ботаем, ботаем и еще раз ботаем!</p>
+                <p class="lyvovka p3">Ботаем, ботаем и еще раз ботаем!</p>
                 <div class="containert mtb-3">
                     <div class="table-responsive">
                         <table class="table">
@@ -126,7 +126,7 @@ $plan = json_decode(getPlan());
 
                     <p class="desc">Четверг</p>
                     <p class="desc"></p>
-                    <p class="lyvovka">Пятница близко!</p>
+                    <p class="lyvovka p4">Пятница близко!</p>
                     <div class="containert mtb-3">
                         <div class="table-responsive">
                             <table class="table">
@@ -147,7 +147,7 @@ $plan = json_decode(getPlan());
 
                         <p class="desc">Пятница</p>
                         <p class="desc"></p>
-                        <p class="lyvovka">Ура, пятница!</p>
+                        <p class="lyvovka p5">Ура, пятница!</p>
                         <div class="containert mtb-3">
                             <div class="table-responsive">
                                 <table class="table">
@@ -167,7 +167,7 @@ $plan = json_decode(getPlan());
 
                             <p class="desc">Суббота</p>
                             <p class="desc"></p>
-                            <p class="lyvovka">Мы дожили!</p>
+                            <p class="lyvovka p6">Мы дожили!</p>
                             <div class="containert mtb-3">
                                 <div class="table-responsive">
                                     <table class="table">
@@ -200,6 +200,36 @@ $plan = json_decode(getPlan());
                                     </div>
                                 </div>
 </section>
+<footer style="background: rgb(24, 54, 118);">
+      <nav style="display:none; flex-direction: row; width: 80%; align-items: center;" id="navUnder1">
+        <ul id="navUnder" style="">
+          <li><a href="https://few-types.ru">Главная</a></li>
+          <li><a href="education.html">Обучение</a></li>
+          <li><a href="practice.html">Практика</a></li>
+          <li><a href="forBeginners.html">Для новичков</a></li>
+          <li><a href="aboutUs.html">О сайте</a></li>
+          <li><a href="communication.html">Связь с нами</a></li>
+        </ul>
+      </nav>
+    <div id="foot"
+      
+      style="display: flex; justify-content: center; flex-direction: row; align-items: center;margin: auto auto;margin-top:70px;margin-bottom:10px">
+      
+        <address>
+      <div id="address" style="display: flex; align-items: center; font-size: 3rem; gap: 10rem; margin-bottom: 1.5rem;">
+      
+                <a href="#" style="color: white;"><i class="fa-brands fa-github"></i></a>
+                <a href="#" style="color: white;"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" style="color: white;"><i class="fa-brands fa-vk"></i></a>
+                <a href="#" style="color: white;"><i class="fa-brands fa-youtube"></i></a>
+
+      </div>
+    </address>
+      <a id="politicConf" style="font-size:1.4rem;color:rgb(119, 119, 119); text-decoration: none;"
+        href="aboutUs.html">Политика конфиденциальности</a>
+        <p id="copyright" style="font-size:1.4rem;color:rgb(119, 119, 119);font-style: normal;">Copyright @ few-types.ru, 2024</p>
+    </div>
+  </footer>
 <script>
     $(function(){
         time = {
