@@ -55,36 +55,18 @@
                         </p>
                       </div>
                       <div class="card card-3">
-                        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                        <div class="card__icon">Технологии Программирования</div>
                         <p class="card__exit"></p>
-                        <h2 class="card__title"></h2>
-                        <p class="card__apply">
-                          <a class="card__link" href="#"><i class="fas fa-arrow-right"></i></a>
-                        </p>
+                        <h2 class="card__title">Проект в командах
+                          <br>
+                          </h2>
                       </div>
-                      <div class="card card-4">
-                        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-                        <p class="card__exit"><i class="fas fa-times"></i></p>
-                        <h2 class="card__title"></h2>
-                        <p class="card__apply">
-                          <a class="card__link" href="#"><i class="fas fa-arrow-right"></i></a>
-                        </p>
-                      </div>
-                      <div class="card card-5">
-                        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-                        <p class="card__exit"><i class="fas fa-times"></i></p>
-                        <h2 class="card__title"></h2>
-                        <p class="card__apply">
-                          <a class="card__link" href="#"><i class="fas fa-arrow-right"></i></a>
-                        </p>
-                      </div>
-                      <div class="card card-1">
-                        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-                        <p class="card__exit"><i class="fas fa-times"></i></p>
-                        <h2 class="card__title"></h2>
-                        <p class="card__apply">
-                          <a class="card__link" href="#"><i class="fas fa-arrow-right"></i></a>
-                        </p>
+                      <div class="card card-3">
+                        <div class="card__icon">Математический анализ</div>
+                        <p class="card__exit"></p>
+                        <h2 class="card__title">Готовиться к КР
+                          <br>
+                          </h2>
                       </div>
                     </div>
                   </div>

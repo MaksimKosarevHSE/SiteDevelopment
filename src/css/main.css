@@ -934,3 +934,36 @@ span{
     left: 0;
     background-color: #faffe9;
   }
+
+  
+
+.group_select {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+.ref_group {
+    color: #fff;
+    font-size: 2rem;
+    background-color: #3f42fe;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.ref_group:hover {
+    transform: scale(1.05);
+    background: #3fbafe;
+}
+.ref_group:active{
+    background: #5f3ffe;
+}
+.activeh {
+    background: #447dc7;
+    transform: scale(1.07);
+}
+
+.contant {
+    display: flex;
+    align-items: center;
+}
