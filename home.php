@@ -29,7 +29,24 @@ $user = getUserByTokenOrRedirect();
             <a href="Personal_account/achievements.php">Полезные материалы</a>
             <a href="Personal_account/contacts.php">Контакты</a>
         </nav>
+        <div class="l">
+          <button type="button" class="mobile-nav-button">
+              <span class="mobile-nav-button__icon"></span>
+          </button>
+        </div>
     </header>
+    <div class="mobile-nav">
+      <nav class="mobile-nav-list">
+          <ul>
+              <li><a href="Personal_account/plan.php">Главная</a></li>
+              <li><a href="Personal_account/homework.php">Расписание</a></li>
+              <li><a href="Personal_account/important.phpl">Домашние задания</a></li>
+              <li><a href="materials/ready-html/app/index.html">Важные объявления</a></li>
+              <li><a href="Personal_account/achievements.php">Полезные материалы</a></li>
+              <li><a href="Personal_account/contacts.php">Контакты</a></li>
+          </ul>
+      </nav>
+    </div>
     <section class="home">
         <div class="home-img">
             <img src="src/resources/img/main.webp" alt="">
@@ -60,6 +77,7 @@ $user = getUserByTokenOrRedirect();
                         <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail()?></a></p>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
     <footer style="background: rgb(24, 54, 118);">
@@ -97,6 +115,7 @@ $user = getUserByTokenOrRedirect();
         $('.loader_bg').fadeToggle();
     }, 1500);
     </script>
+    <script src="src/js/burger.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>

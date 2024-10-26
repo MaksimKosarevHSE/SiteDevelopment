@@ -1284,3 +1284,125 @@ button.primary.ghost {
     align-items: center;
     justify-content: center;
  }
+
+ @media(max-width: 767px) {
+    .mobile-nav-button {
+        display: flex;
+        z-index: 1000;
+    }
+}
+
+.mobile-nav-button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	background: transparent;
+	position: relative;
+    top: 0;
+    right: 0;
+	z-index: 999;
+	width: 40px;
+	height: 30px;
+	justify-content: center;
+    display: none;
+    z-index: 1000;
+}
+
+@media (max-width: 767px){
+    .mobile-nav-button {
+        display: flex;
+        z-index: 1000;
+    }
+}
+
+.mobile-nav-button__icon {
+	display: block;
+	width: 40px;
+	height: 5px;
+	background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    z-index: 1000;
+}
+
+.mobile-nav-button__icon::after,
+.mobile-nav-button__icon::before {
+	position: absolute;
+	content: '';
+	width: 40px;
+	height: 5px;
+	background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+	transition: transform 0.15s ease-in, top 0.15s ease-in 0.15s;
+}
+
+.mobile-nav-button__icon::before {
+	left: 0;
+	top: -10px;
+}
+
+.mobile-nav-button__icon::after {
+	left: 0;
+	top: 10px;
+}
+
+.mobile-nav-button__icon.active {
+	background-color: transparent;
+}
+
+.mobile-nav-button__icon.active::before {
+	transform: rotate(45deg);
+	top: 0;
+	transition: top 0.15s linear, transform 0.15s ease-in 0.15s;
+}
+
+.mobile-nav-button__icon.active::after {
+	transform: rotate(-45deg);
+	top: 0;
+	transition: top 0.15s linear, transform 0.15s ease-in 0.15s;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(98, 163, 243, 0.4);
+    flex-direction: column;
+    align-items: center;
+    padding: 77px 155px;
+}
+.mobile-nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 28px;
+    transition: color 0.3s ease 0s;
+}
+.mobile-nav a:hover {
+    color: rgba(225, 227, 236, 0.7);
+}
+.mobile-nav li {
+    list-style-type: none;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav-list {
+    font-size: 22px;
+}
+
+.mobile-nav-list li + li {
+    margin-top: 20px;
+    
+}
+
+.l {
+    width: 40px;
+	height: 100%;
+    position: relative;
+    top: 1rem;
+}

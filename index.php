@@ -68,7 +68,7 @@ closeAccessForAuthPages();
         <p id="copyright" style="font-size:1.4rem;color:rgb(119, 119, 119);font-style: normal;">Copyright @ few-types.ru, 2024</p>
     </div>
   </footer>
-    <script src="src/js/preloader.js"></script>
+    <script src="src/js/burger.js"></script>
     <script>setTimeout(function(){
         $('.loader_bg').fadeToggle();
     }, 1500);
