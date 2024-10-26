@@ -39,10 +39,10 @@ $user = getUserByTokenOrRedirect();
 <div class="mobile-nav">
     <nav class="mobile-nav-list">
         <ul>
-            <li><a href="Personal_account/plan.php">Главная</a></li>
-            <li><a href="Personal_account/homework.php">Расписание</a></li>
-            <li><a href="Personal_account/important.phpl">Домашние задания</a></li>
-            <li><a href="materials/ready-html/app/index.html">Важные объявления</a></li>
+            <li><a href="#">Главная</a></li>
+            <li><a href="Personal_account/plan.php">Расписание</a></li>
+            <li><a href="Personal_account/homework.php">Домашние задания</a></li>
+            <li><a href="Personal_account/important.php">Важные объявления</a></li>
             <li><a href="Personal_account/achievements.php">Полезные материалы</a></li>
             <li><a href="Personal_account/contacts.php">Контакты</a></li>
         </ul>
@@ -73,12 +73,12 @@ $user = getUserByTokenOrRedirect();
 <footer>
     <nav style="display: none;" id="navUnder1">
         <ul id="navUnder" style="">
-            <li><a href="https://few-types.ru">Главная</a></li>
-            <li><a href="education.html">Обучение</a></li>
-            <li><a href="practice.html">Практика</a></li>
-            <li><a href="forBeginners.html">Для новичков</a></li>
-            <li><a href="aboutUs.html">О сайте</a></li>
-            <li><a href="communication.html">Связь с нами</a></li>
+            <li><a href="#">Главная</a></li>
+            <li><a href="Personal_account/plan.php">Расписание</a></li>
+            <li><a href="Personal_account/homework.php">Домашние задания</a></li>
+            <li><a href="Personal_account/important.php">Важные объявления</a></li>
+            <li><a href="Personal_account/achievements.php">Полезные материалы</a></li>
+            <li><a href="Personal_account/contacts.php">Контакты</a></li>
         </ul>
     </nav>
     <div id="foot"
@@ -101,7 +101,7 @@ $user = getUserByTokenOrRedirect();
         </address>
         <a id="politicConf" style="font-family: 'Roboto', sans-serif; font-size:15px;color:rgb(119, 119, 119); text-decoration: none;"
            href="aboutUs.html">Политика конфиденциальности</a>
-        <p id="copyright" style="font-family: 'Roboto', sans-serif; font-size:15px;color:rgb(119, 119, 119);font-style: normal;">Copyright @ few-types.ru, 2023</p>
+        <p id="copyright" style="font-family: 'Roboto', sans-serif; font-size:15px;color:rgb(119, 119, 119);font-style: normal;">Copyright @ few-types.ru, 2024</p>
     </div>
 </footer>
 <style>
@@ -535,6 +535,8 @@ $user = getUserByTokenOrRedirect();
                 </p>
                 <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail() ?></a></p>
             </div>
+            <button class="popup_btn">Выйти
+              </button>
         </div>
     </div>
 </div>
