@@ -30,7 +30,7 @@
             <h2 class="title">Важная информация</h2>
             <p class="desc" >Здесь вы можете прочитать важные обьявления от старосты.</p>
             <div class="cardi">
-                    <a class="card__a" href="pages/page1.html">
+                    <a class="card__a" href="information/1.html">
                         <div class="card__item">
                             <div class="card__cover">
                                 <img src="../src/resources/img/card.jpg" class="card__img" alt="">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </a>
-                <a class="card__a" href="pages/page2.html">
+                <a class="card__a" href="information/2.html">
                     <div class="card__item">
                         <div class="card__cover">
                             <img src="../src/resources/img/diskretnaya.png" class="card__img" alt="">
@@ -60,7 +60,7 @@
                                 </div>
                     </div>
                 </a>
-                <a class="card__a" href="pages/page10.html">
+                <a class="card__a" href="information/3.html">
                     <div class="card__item">
                         <div class="card__cover">
                             <img src="../src/resources/img/session.webp" class="card__img" alt="">
