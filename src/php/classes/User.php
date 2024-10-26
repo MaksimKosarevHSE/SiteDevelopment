@@ -9,6 +9,7 @@ class User{
     private bool $confirmedEmail;
     private ?string $avatarUrl = null;
     private int $positionId;
+    private ?int $group;
 
 
 
@@ -84,6 +85,16 @@ class User{
     {
         $this->avatarUrl = $avatarUrl;
     }
+    public function getGroup(): ?int
+    {
+        return $this->group;
+    }
+
+    public function setGroup(?int $g): void
+    {
+        $this->group = $g;
+    }
+
 
     public function getPositionId(): int
     {

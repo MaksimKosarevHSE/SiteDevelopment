@@ -1,4 +1,11 @@
 <?php
+include_once "../src/php/auth/getUserByToken.php";
+$user = getUserByTokenOrRedirect();
+$group = "knt1";
+if ($user != null){
+    $group = "knt" . $user->getGroup();
+}
+
 require_once "../src/php/parser/parse.php";
 $plan = json_decode(getPlan());
 ?>
@@ -41,15 +48,15 @@ $plan = json_decode(getPlan());
         <div class="container">
                 <h2 class="title">Расписание</h2>
                 <div class="group_select">
-                  <a href="" class="ref_group activeh"><div class="group_number">Группа 1</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 2</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 3</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 4</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 5</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 6</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 7</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 8</div></a>
-                  <a href="" class="ref_group"><div class="group_number">Группа 9</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=1" class="ref_group"><div class="group_number">Группа 1</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=2" class="ref_group"><div class="group_number">Группа 2</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=3" class="ref_group"><div class="group_number">Группа 3</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=4" class="ref_group"><div class="group_number">Группа 4</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=5" class="ref_group"><div class="group_number">Группа 5</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=6" class="ref_group"><div class="group_number">Группа 6</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=7" class="ref_group"><div class="group_number">Группа 7</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=8" class="ref_group"><div class="group_number">Группа 8</div></a>
+                  <a href="../src/php/parser/changeGroup.php?group=9" class="ref_group"><div class="group_number">Группа 9</div></a>
                 </div>
             <p class="desc">Понедельник</p>
                     <p class="desc"></p>
@@ -182,7 +189,6 @@ $plan = json_decode(getPlan());
     </section>
     <script>
         $(function(){
-            console.log(planFromServer)
             time = {
                 1 : "08:00 - 09:20",
                 2 : "09:30 - 10:50",
@@ -193,7 +199,11 @@ $plan = json_decode(getPlan());
                 7 : "18:10 - 19:30",
                 8 : "19:40 - 21:00"
             }
-            group = "knt9";
+           group = <?php echo "\"" . $group . "\""?>;
+
+            $("[href='../src/php/parser/changeGroup.php?group=<?php echo $user->getGroup() ?>']").addClass("activeh");
+
+
             if (planFromServer.length !== 0){
                 {
                     pl = planFromServer["mon"][group];

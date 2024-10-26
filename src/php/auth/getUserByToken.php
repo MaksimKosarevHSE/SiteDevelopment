@@ -17,6 +17,12 @@ function getUserByToken() : ?User{
             }
             $row = $stmt->fetch();
             $user = new User($row["user_id"], $row["email"], $row["first_name"], $row["last_name"], $row["third_name"], $row["confirmed_email"], $row["avatar"], $row["position_id"]);
+            if($row["group_st"] == null){
+                $user->setGroup(null);
+            } else {
+                $user->setGroup($row["group_st"]);
+            }
+
             return $user;
         } catch (Exception $e) {
             setcookie("token", "", time()-3600, "/", "hsehelpers.ru", false, true);
