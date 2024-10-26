@@ -138,7 +138,8 @@ header{
     transform: scale(1.1);
 }
 
-nav a{
+
+.header nav a{
     font-size: 1.8rem;
     color: white;
     margin-left: 4rem;
@@ -147,14 +148,14 @@ nav a{
     border-bottom: 3px solid transparent;
 }
 
-nav a:hover,
-nav a.active{
+.header nav a:hover,
+.header nav a.active{
     color: rgb(33, 83, 190);
     border-bottom: 3px solid rgb(17,45,105);
 }
 
 @media(max-width:995px){
-    nav{
+    .header nav{
         position: absolute;
         display: none;
         top: 0;
@@ -170,18 +171,18 @@ nav a.active{
         background: rgba(33, 83, 190, 0.7);
         box-shadow: 0  0 15px rgb(34, 86, 199);
     }
-    nav.active{
+    .header nav.active{
         display: block;
     }
 
-    nav a{
+    .header nav a{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
     }
 
-    nav a:hover,
-    nav a.active{
+    .header nav a:hover,
+    .header nav a.active{
         padding: 1rem;
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid rgb(17,45,105);
@@ -1406,3 +1407,4 @@ button.primary.ghost {
     position: relative;
     top: 1rem;
 }
+
