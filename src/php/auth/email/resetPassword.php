@@ -84,6 +84,13 @@ if(!empty($_GET["code"]) && strlen(trim($_GET["code"])) != 0){
         if($stmt->rowCount() == 0){
             throw new Exception("Ошибка БД");
         }
+
+        $sql = "DELETE FROM ResetCodes WHERE user_id = :userid";
+        $stmt = $connUsers->prepare($sql);
+        $stmt->bindValue(":userid", $userId);
+        $stmt->execute();
+
+
         $connUsers->commit();
         unset($_SESSION["status"]);
         unset($_SESSION["errStatus"]);

@@ -77,7 +77,7 @@ unset($_SESSION["validation"]);
                                 </div>
                                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                                     <label for="checkbox">
-                                        <input type="checkbox" name="politicAccept"> Соглащаюсь с политикой
+                                        <input type="checkbox" name="politicAccept"> >Я соглашаюсь с <a href="politic.php">политикой конфидециальности</a>
                                     </label>
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="6LekM2wqAAAAAE7ZNWCZaCeIFb_ZgkuoM9R7r-IE"></div>

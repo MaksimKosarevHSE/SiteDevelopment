@@ -9,6 +9,7 @@ closeAccessForAuthPages();
     <meta charset="utf-8">
     <title>Регистрация</title>
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/captcha.css">
     <!--Подключение капчи-->
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
@@ -63,7 +64,7 @@ closeAccessForAuthPages();
                                 </div>
                                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                                     <label for="checkbox">
-                                        <input type="checkbox" name="politicAccept" class="hide"> Соглащаюсь с политикой
+                                        <input type="checkbox" name="politicAccept" class="hide">Я соглашаюсь с <a href="politic.php">политикой конфидециальности</a>
                                     </label>
 
                                 </div>
