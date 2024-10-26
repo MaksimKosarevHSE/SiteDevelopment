@@ -35,7 +35,7 @@ function makeMsg($name, $sub, $info, $butt, $link){
                 <td align="center" style="border: none;
                            border-bottom: 2px solid #4c6eb9; 
                            padding-right: 20px;padding-left:20px">
-                    <img src="../../src/resources/img/thanks.png" alt="">
+                    <img src="https://hsehelpers.ru/src/resources/img/thanks.png" alt="">
                     <p style="font-weight: bolder;font-size: 42px;
                               letter-spacing: 0.025em;
                               color:black;">
