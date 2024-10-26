@@ -56,8 +56,7 @@ body{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    margin-top: 15rem;
+    flex-direction: row;ß
 }
 .loader{
     border: 0 transparent;
@@ -674,6 +673,7 @@ input[type=file]::file-selector-button {
 	align-items: center;
 	justify-content: center;
 	gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 
