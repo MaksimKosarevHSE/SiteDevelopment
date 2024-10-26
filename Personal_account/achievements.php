@@ -121,7 +121,7 @@ $user = getUserByTokenOrRedirect();
                     <div class="popup__title"><img class="popup__img account__img" src="../src/resources/img/back_reg.png"  alt="Slider item" /></div>
                     <div class="popup__title account__title"><?php echo $user->getFirstName() . " " . $user->getLastName()?><br></div>
                     <div class="popup__text account__text">
-                        <p style="margin-bottom: 2rem;">Группа: <a href="" class="aant"><?php echo "24кнт" .$user->getGroup()?></a></p>
+                        <p style="margin-bottom: 2rem;">Группа: <a href="<?php echo $user->getGroup() == null ? "plan.php" : ""?>" class="aant"><?php echo $user->getGroup() == null ? "выбрать" : "24кнт" . $user->getGroup()?></a></p>
                         <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail()?></a></p>
                     </div>
                 </div>

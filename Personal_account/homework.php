@@ -20,7 +20,7 @@ $user = getUserByTokenOrRedirect();
         <span class="loader__span">Загрузка данных...</span>
     </div>
     <header class="header">
-        <a href="#account" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""><p>Имя</p></a>
+        <a href="#account" class="logo" ><img src="../src/resources/img/back_reg.png" alt=""><p><?php echo $user->getFirstName()?></p></a>
         <nav>
             <a href="../home.php" >Главная</a>
             <a href="plan.php">Расписание</a>
@@ -42,7 +42,7 @@ $user = getUserByTokenOrRedirect();
                         <p class="card__exit"></p>
                         <h2 class="card__title">Выполнить задания из сборника: 2.1, 2.2, 2.3, 2.4</h2>
                         <p class="card__apply">
-                            <a class="card__link" href="#">Отправить<i class="fas fa-arrow-right"></i></a></a>
+                            <a class="card__link" href="#popup7">Отправить<i class="fas fa-arrow-right"></i></a></a>
                         </p>
                       </div>
                       <div class="card card-2">
@@ -107,6 +107,34 @@ $user = getUserByTokenOrRedirect();
           </div>
         </div>
         </div>
+
+
+
+
+        <div id="popup7" class="popup">
+            <a href="#header" class="popup__area"></a>
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="#header" class="popup__close">Х</a>
+                    <div class="popup__title"><img class="popup__img" src="../src/resources/files/linal.jpg" alt="Slider item" /></div>
+                    <div class="popup__title">Дискретная математика<br>Логвинова Кира Владимировна</div>
+                    <div class="popup__text"><p><form id="form" action="../src/php/sendDZ.php" method="POST" enctype="multipart/form-data">
+                            <label for="images" class="drop-container" id="dropcontainer">
+                                <span class="drop-title">Перетащите файл сюда</span>
+                                или
+                                <input type="file" id="images" name="discra" accept="pdf/*" required>
+                            </label>
+                            <button class="popup_btn">Отправить</button>
+                        </form></p></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
             <div id="account" class="popup">
                 <a href="#header" class="popup__area"></a>
                 <div class="popup__body account__body">
@@ -115,7 +143,7 @@ $user = getUserByTokenOrRedirect();
                         <div class="popup__title"><img class="popup__img account__img" src="../src/resources/img/back_reg.png"  alt="Slider item" /></div>
                         <div class="popup__title account__title"><?php echo $user->getFirstName() . " " . $user->getLastName()?><br></div>
                         <div class="popup__text account__text">
-                            <p style="margin-bottom: 2rem;">Группа: <a href="" class="aant"><?php echo "24кнт" .$user->getGroup()?></a></p>
+                            <p style="margin-bottom: 2rem;">Группа: <a href="<?php echo $user->getGroup() == null ? "plan.php" : ""?>" class="aant"><?php echo $user->getGroup() == null ? "выбрать" : "24кнт" . $user->getGroup()?></a></p>
                             <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail()?></a></p>
                         </div>
                     </div>
