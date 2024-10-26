@@ -1370,7 +1370,8 @@ button.primary.ghost {
     right: 0;
     width: 0%;
     height: 100%;
-    background-color: rgba(98, 163, 243, 0.4);
+    background-color: rgba(98, 163, 243, 0.85);
+    z-index: 1000;
     flex-direction: column;
     align-items: center;
     padding: 77px 155px;
