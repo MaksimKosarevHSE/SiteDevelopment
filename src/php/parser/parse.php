@@ -70,7 +70,7 @@ function getPlan()
             for ($i = 11; $i < 17; $i++) {
 
                 $ceil = $table[$i][$a];
-                $arr["mon"]["knt{$group}"]["lessons"]["lessons"][] = $ceil;
+                $arr["mon"]["knt{$group}"]["lessons"][] = $ceil;
                 $arr["mon"]["knt{$group}"]["audit"][] = $table[$i][$a + 1];
             }
 
@@ -139,7 +139,7 @@ function getPlan()
             }
 
             $ceil = $table[44][$a];
-            $arr["thur"]["knt{$group}"][] = $ceil;
+            $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
 
             $ceil = $table[50][$a];
             $arr["thur"]["knt{$group}"]["lessons"][] = $ceil;
