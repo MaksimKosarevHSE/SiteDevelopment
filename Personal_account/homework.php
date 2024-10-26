@@ -106,6 +106,7 @@ $user = getUserByTokenOrRedirect();
                   </form></p></div>
           </div>
         </div>
+        </div>
             <div id="account" class="popup">
                 <a href="#header" class="popup__area"></a>
                 <div class="popup__body account__body">
@@ -120,7 +121,7 @@ $user = getUserByTokenOrRedirect();
                     </div>
                 </div>
             </div>
-        </div>
+
 
     </section>
     <script src="../src/js/preloader.js"></script>
