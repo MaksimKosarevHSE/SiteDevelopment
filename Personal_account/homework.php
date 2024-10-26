@@ -83,6 +83,7 @@
                 </div>
             </div>
         </div>
+        
         <div id="popup6" class="popup">
           <a href="#header" class="popup__area"></a>
           <div class="popup__body">

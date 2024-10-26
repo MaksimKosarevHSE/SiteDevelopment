@@ -30,7 +30,7 @@
             <h2 class="title">Важная информация</h2>
             <p class="desc" >Здесь вы можете прочитать важные обьявления от старосты.</p>
             <div class="cardi">
-                    <a class="card__a" href="information/1.html">
+                    <a class="card__a" href="#popup1">
                         <div class="card__item">
                             <div class="card__cover">
                                 <img src="../src/resources/img/card.jpg" class="card__img" alt="">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </a>
-                <a class="card__a" href="information/2.html">
+                <a class="card__a" href="#popup2">
                     <div class="card__item">
                         <div class="card__cover">
                             <img src="../src/resources/img/diskretnaya.png" class="card__img" alt="">
@@ -60,7 +60,7 @@
                                 </div>
                     </div>
                 </a>
-                <a class="card__a" href="information/3.html">
+                <a class="card__a" href="#popup3">
                     <div class="card__item">
                         <div class="card__cover">
                             <img src="../src/resources/img/session.webp" class="card__img" alt="">
@@ -77,6 +77,7 @@
                 </a>
         </div>
     </div>
+
     <div id="account" class="popup">
             <a href="#header" class="popup__area"></a>
             <div class="popup__body account__body">
@@ -89,7 +90,37 @@
                         <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant">mail</a></p>
                     </div>
                 </div>
-      </div>
+    </div>
+    <div id="popup1" class="popup">
+        <a href="#header" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close">Х</a>
+                <div class="popup__title"><img class="popup__img" src="../src/resources/img/card.jpg" alt="Slider item" /></div>
+                <div class="popup__title">Выдача стипендии<br></div>
+                <div class="popup__text"><p>На этой неделе состоится выдача стипендиальных карт по расписанию.</p></div>
+        </div>
+    </div>
+    <div id="popup23" class="popup">
+        <a href="#header" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close">Х</a>
+                <div class="popup__title"><img class="popup__img" src="../src/resources/img/diskretnaya.png" alt="Slider item" /></div>
+                <div class="popup__title">КР Дискретная математика<br></div>
+                <div class="popup__text"><p>В  этот понедельник состоится контрольная по дискретной математике</p></div>
+        </div>
+    </div>
+    <div id="popup3" class="popup">
+        <a href="#header" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close">Х</a>
+                <div class="popup__title"><img class="popup__img" src="../src/resources/img/session.webp" alt="Slider item" /></div>
+                <div class="popup__title">Расписание сессий<br></div>
+                <div class="popup__text"><p>Вы можете ознакомиться с расписанием сессионной недели</p></div>
+        </div>
+    </div>
     <script src="../src/js/preloader.js"></script>
     <script>setTimeout(function(){
         $('.loader_bg').fadeToggle();
