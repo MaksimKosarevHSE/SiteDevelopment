@@ -34,11 +34,11 @@ $user = getUserByTokenOrRedirect();
     <p class="desc">Книги, сборники, конспекты, презентации - все что нужно для счастливой жизни</p>
     <div class="masonry">
       <div class="grid">
-        <img src="../src/resources/img/66010085.jpg">
+        <img src="../src/resources/img/mathfull.png">
         <div class="grid__body">
           <div class="relative">
-            <a class="grid__link" href="../src/resources/files/Klushin.pdf" ></a>
-            <h1 class="grid__title">Сборник по <br>дискретной математике</h1>
+            <a class="grid__link" href="../src/resources/files/Mathematical_analysis_FULL.pdf" ></a>
+            <h1 class="grid__title">Все конспекты<br>по математическому анализу</h1>
             <p class="grid__author"></p>
             <div class="text"></div>
           </div>
@@ -48,11 +48,11 @@ $user = getUserByTokenOrRedirect();
         </div>
       </div>
       <div class="grid">
-        <img src="../src/resources/img/1008791524.jpg">
+        <img src="../src/resources/img/vushimka.png">
         <div class="grid__body">
           <div class="relative">
-            <a class="grid__link" href="../src/resources/files/3-15.pdf" ></a>
-            <h1 class="grid__title"></h1>
+            <a class="grid__link" href="../src/resources/files/vushimka_linal.pdf" ></a>
+            <h1 class="grid__title">Выжимка по линейной алгебре</h1>
             <p class="grid__author"></p>
           </div>
           <div class="mt-auto" >
@@ -61,11 +61,11 @@ $user = getUserByTokenOrRedirect();
         </div>
       </div>
       <div class="grid">
-        <img src="../src/resources/img/3720732_910746.jpg">
+        <img src="../src/resources/img/book.webp">
         <div class="grid__body">
           <div class="relative">
-            <a class="grid__link" href="../src/resources/files/3-15.pdf" ></a>
-            <h1 class="grid__title">Линейная алгебра <br> </h1>
+            <a class="grid__link" href="../src/resources/files/lek_linal.pdf" ></a>
+            <h1 class="grid__title">Все презентации по лекциям линейной алгебры и геометрии<br> </h1>
             <p class="grid__author"></p>
           </div>
           <div class="mt-auto" >
@@ -87,11 +87,11 @@ $user = getUserByTokenOrRedirect();
         </div>
       </div>
       <div class="grid">
-        <img src="../src/resources/img/diskretnaya.png">
+        <img src="../src/resources/img/discra.png">
         <div class="grid__body">
           <div class="relative">
-            <a class="grid__link" href="../src/resources/files/3-15.pdf" ></a>
-            <h1 class="grid__title">Презентации по дискретной математике<br></h1>
+            <a class="grid__link" href="../src/resources/files/discr.pdf" ></a>
+            <h1 class="grid__title">Сборник по дискретной математике<br></h1>
             <p class="grid__author"></p>
           </div>
           <div class="mt-auto" >
@@ -100,11 +100,11 @@ $user = getUserByTokenOrRedirect();
         </div>
       </div>
       <div class="grid">
-        <img src="../src/resources/img/forget.jpg" style="">
+        <img src="../src/resources/img/org.png" style="">
         <div class="grid__body">
           <div class="relative">
-           <a class="grid__link" href="../src/resources/files/3-15.pdf"></a>
-            <h1 class="grid__title">Сюрприз</h1>
+           <a class="grid__link" href="../src/resources/files/org.pdf"></a>
+            <h1 class="grid__title">Учебник по ОРГ</h1>
             <p class="grid__author"></p>
           </div>
           <div class="mt-auto" >
@@ -112,6 +112,45 @@ $user = getUserByTokenOrRedirect();
           </div>
         </div>
       </div> 
+      <div class="grid">
+        <img src="../src/resources/img/zorich1.png" style="">
+        <div class="grid__body">
+          <div class="relative">
+           <a class="grid__link" href="../src/resources/files/Zorich1.pdf"></a>
+            <h1 class="grid__title">Учебник по математическому анализу, Зорич, часть 1</h1>
+            <p class="grid__author"></p>
+          </div>
+          <div class="mt-auto" >
+            <span class="grid__tag main__btn main__btn__gradient">Скачать</span>
+          </div>
+        </div>
+      </div> 
+      <div class="grid">
+        <img src="../src/resources/img/zorich2.png" style="">
+        <div class="grid__body">
+          <div class="relative">
+           <a class="grid__link" href="../src/resources/files/Zorich2.pdf"></a>
+            <h1 class="grid__title">Учебник по математическому анализу, Зорич, часть 2</h1>
+            <p class="grid__author"></p>
+          </div>
+          <div class="mt-auto" >
+            <span class="grid__tag main__btn main__btn__gradient">Скачать</span>
+          </div>
+        </div>
+      </div> 
+      <div class="grid">
+        <img src="../src/resources/img/demidovich.png" style="">
+        <div class="grid__body">
+          <div class="relative">
+           <a class="grid__link" href="../src/resources/files/Zorich2.pdf"></a>
+            <h1 class="grid__title">Сборник по математическому анализу, Демидович</h1>
+            <p class="grid__author"></p>
+          </div>
+          <div class="mt-auto" >
+            <span class="grid__tag main__btn main__btn__gradient">Скачать</span>
+          </div>
+        </div>
+      </div>
     </div> 
     <div id="account" class="popup">
             <a href="#header" class="popup__area"></a>
