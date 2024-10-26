@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once "../src/php/auth/getUserByToken.php";
+$user = getUserByTokenOrRedirect();
+?>
 <html>
 
 <head>

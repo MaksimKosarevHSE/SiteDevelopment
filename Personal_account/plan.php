@@ -1,7 +1,7 @@
 <?php
 include_once "../src/php/auth/getUserByToken.php";
 $user = getUserByTokenOrRedirect();
-$group = "knt1";
+$group = "knt9";
 if ($user != null){
     $group = "knt" . $user->getGroup();
 }
@@ -187,18 +187,25 @@ $plan = json_decode(getPlan());
 
                                         </div>
                                         <div id="account" class="popup">
-            <a href="#header" class="popup__area"></a>
-            <div class="popup__body account__body">
-                <div class="popup__content account__content">
-                    <a href="#header" class="popup__close">Х</a>
-                    <div class="popup__title"><img class="popup__img account__img" src="../src/resources/img/back_reg.png"  alt="Slider item" /></div>
-                    <div class="popup__title account__title">Имя пользователя<br></div>
-                    <div class="popup__text account__text">
-                        <p style="margin-bottom: 2rem;">Группа: <a href="" class="aant">24кнт9</a></p>
-                        <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant">mail</a></p>
-                    </div>
-                </div>
+                                     <a href="#header" class="popup__area"></a>
+                                            <div id="account" class="popup">
+                                                <a href="#header" class="popup__area"></a>
+                                                <div class="popup__body account__body">
+                                                    <div class="popup__content account__content">
+                                                        <a href="#header" class="popup__close">Х</a>
+                                                        <div class="popup__title"><img class="popup__img account__img" src="../src/resources/img/back_reg.png"  alt="Slider item" /></div>
+                                                        <div class="popup__title account__title"><?php echo $user->getFirstName() . " " . $user->getLastName()?><br></div>
+                                                        <div class="popup__text account__text">
+                                                            <p style="margin-bottom: 2rem;">Группа: <a href="" class="aant"><?php echo "24кнт" .$user->getGroup()?></a></p>
+                                                            <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail()?></a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
       </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                     </section>
     <script>
         $(function(){

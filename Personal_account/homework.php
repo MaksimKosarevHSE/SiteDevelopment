@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once "../src/php/auth/getUserByToken.php";
+$user = getUserByTokenOrRedirect();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,19 +106,22 @@
                   </form></p></div>
           </div>
         </div>
-        <div id="account" class="popup">
-            <a href="#header" class="popup__area"></a>
-            <div class="popup__body account__body">
-                <div class="popup__content account__content">
-                    <a href="#header" class="popup__close">Х</a>
-                    <div class="popup__title"><img class="popup__img account__img" src="../src/resources/img/back_reg.png"  alt="Slider item" /></div>
-                    <div class="popup__title account__title">Имя пользователя<br></div>
-                    <div class="popup__text account__text">
-                        <p style="margin-bottom: 2rem;">Группа: <a href="" class="aant">24кнт9</a></p>
-                        <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant">mail</a></p>
+            <div id="account" class="popup">
+                <a href="#header" class="popup__area"></a>
+                <div class="popup__body account__body">
+                    <div class="popup__content account__content">
+                        <a href="#header" class="popup__close">Х</a>
+                        <div class="popup__title"><img class="popup__img account__img" src="../src/resources/img/back_reg.png"  alt="Slider item" /></div>
+                        <div class="popup__title account__title"><?php echo $user->getFirstName() . " " . $user->getLastName()?><br></div>
+                        <div class="popup__text account__text">
+                            <p style="margin-bottom: 2rem;">Группа: <a href="" class="aant"><?php echo "24кнт" .$user->getGroup()?></a></p>
+                            <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail()?></a></p>
+                        </div>
                     </div>
                 </div>
-      </div>
+            </div>
+        </div>
+
     </section>
     <script src="../src/js/preloader.js"></script>
     <script>setTimeout(function(){
