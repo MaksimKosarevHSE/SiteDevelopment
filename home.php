@@ -60,9 +60,9 @@ $user = getUserByTokenOrRedirect();
         <p>Можете познакомиться с нашим проектом в данных социальных сетях:</p>
         <div class="social-icons">
             <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-telegram"></i></a>
-            <a href="#"><i class="fa-brands fa-vk"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://t.me/hse_studentHelper"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://vk.com/club228012977"><i class="fa-brands fa-vk"></i></a>
+            <a href="https://www.youtube.com/channel/UCsTUuWHxDhq5TnsYqFdRwRQ"><i class="fa-brands fa-youtube"></i></a>
         </div>
         <a href="Personal_account/plan.php" style="font-weight: 400" class="btn">Перейти к сервисам</a>
     </div>
