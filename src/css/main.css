@@ -173,6 +173,13 @@ header{
     .loader{ 
         display: none;
     }
+    .loader:before, .loader:after {
+        display: none;
+    }
+    .loader__span {
+        display: none;
+    }
+
     .header {
         background: rgba(33, 83, 190, 0.7);
         box-shadow: 0  0 15px rgb(34, 86, 199);
