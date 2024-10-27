@@ -167,18 +167,6 @@ header{
         padding: 1rem solid;
         border-top: 0.1rem solid rgba(0,0,0,0.1);
     }
-    .loader_bg{
-        display: none;
-    }
-    .loader{ 
-        display: none;
-    }
-    .loader:before, .loader:after {
-        display: none;
-    }
-    .loader__span {
-        display: none;
-    }
 
     .header {
         background: rgba(33, 83, 190, 0.7);
