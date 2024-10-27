@@ -120,7 +120,7 @@ $user = getUserByTokenOrRedirect();
                       или
                       <input type="file" id="images" name="linal" accept="pdf/*" required>
                     </label>
-                    <button class="popup_btn">Отправить</button>
+                    <button class="popup_btn" style="cursor:pointer">Отправить</button>
                   </form></p></div>
           </div>
         </div>
@@ -131,8 +131,8 @@ $user = getUserByTokenOrRedirect();
 
         <div id="popup7" class="popup">
             <a href="#header" class="popup__area"></a>
-            < class="popup__body">
-                < class="popup__content">
+            <div class="popup__body">
+                <div class="popup__content">
                     <a href="#header" class="popup__close">Х</a>
                     <div class="popup__title"><img class="popup__img" src="../src/resources/files/linal.jpg" alt="Slider item" /></div>
                     <div class="popup__title">Дискретная математика<br>Логвинова Кира Владимировна</div>
@@ -142,10 +142,8 @@ $user = getUserByTokenOrRedirect();
                                 или
                                 <input type="file" id="images" name="discra" accept="pdf/*" required>
                             </label>
-                            <button class="popup_btn">Отправить</button>
+                            <button class="popup_btn" style="cursor:pointer">Отправить</button>
                         </form></p></div>
-                        <button class="popup_btn">Выйти
-                    </button>
                 </div>
             </div>
         </div>
