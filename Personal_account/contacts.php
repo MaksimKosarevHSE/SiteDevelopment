@@ -172,8 +172,10 @@ $user = getUserByTokenOrRedirect();
 
                     <p style="margin-bottom: 2rem;">Почта: <a href="" class="aant"><?php echo $user->getEmail()?></a></p>
                 </div>
-                <button class="popup_btn">Выйти
-              </button>
+                <form action="../src/php/auth/email/exit.php" method="POST">
+                    <button type="submit" class="popup_btn">Выйти
+                    </button>
+                </form>
             </div>
             </div>
         </div>
@@ -207,8 +209,8 @@ $user = getUserByTokenOrRedirect();
             </div>
         </address>
         <a id="politicConf" style="font-family: 'Roboto', sans-serif; font-size:15px;color:rgb(119, 119, 119); text-decoration: none;"
-           href="aboutUs.html">Политика конфиденциальности</a>
-        <p id="copyright" style="font-family: 'Roboto', sans-serif; font-size:15px;color:rgb(119, 119, 119);font-style: normal;">Copyright @ few-types.ru, 2024</p>
+           href="../politic.pdf">Политика конфиденциальности</a>
+
     </div>
 </footer>
 <style>
