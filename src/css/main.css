@@ -504,7 +504,7 @@ span{
   background: radial-gradient(#f588d8, #c0a3e5);
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 16000px) {
 
 .popup {
     position: fixed;
