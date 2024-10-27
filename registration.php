@@ -64,7 +64,7 @@ closeAccessForAuthPages();
                                 </div>
                                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                                     <label for="checkbox">
-                                        <input type="checkbox" name="politicAccept" class="hide">Я соглашаюсь с <a href="politic.php">&nbsp;политикой конфидециальности</a>
+                                        <input type="checkbox" name="politicAccept" class="hide">Я соглашаюсь с <a href="politic.pdf">&nbsp;политикой конфидециальности</a>
                                     </label>
 
                                 </div>

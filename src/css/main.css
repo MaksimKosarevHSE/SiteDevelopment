@@ -167,6 +167,12 @@ header{
         padding: 1rem solid;
         border-top: 0.1rem solid rgba(0,0,0,0.1);
     }
+    .loader_bg{
+        display: none;
+    }
+    .loader{ 
+        display: none;
+    }
     .header {
         background: rgba(33, 83, 190, 0.7);
         box-shadow: 0  0 15px rgb(34, 86, 199);
