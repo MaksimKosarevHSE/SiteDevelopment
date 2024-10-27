@@ -1371,7 +1371,6 @@ button.primary.ghost {
     width: 0%;
     height: 100%;
     background-color: rgba(98, 163, 243, 0.85);
-    z-index: 1000;
     flex-direction: column;
     align-items: center;
     padding: 77px 155px;
