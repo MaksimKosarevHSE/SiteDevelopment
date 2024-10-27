@@ -636,6 +636,7 @@ input[type=file]::file-selector-button {
     color: rgb(238, 238, 238, 0.8);
     margin: 0 auto;
     transition: 0.5s;
+    cursor: pointer;
   }
   .popup_btn:hover {
     border: #0d45a5 1px solid;
@@ -1287,7 +1288,7 @@ button.primary.ghost {
     justify-content: center;
  }
 
- @media(max-width: 767px) {
+ @media(max-width:995px) {
     .mobile-nav-button {
         display: flex;
         z-index: 1001;
@@ -1309,7 +1310,7 @@ button.primary.ghost {
     display: none;
 }
 
-@media (max-width: 767px){
+@media (max-width:995px){
     .mobile-nav-button {
         display: flex;
         z-index: 1001;
